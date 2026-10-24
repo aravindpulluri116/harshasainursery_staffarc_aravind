@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* One font, two weights, three sizes. Everything else is derived from these tokens. */
+@theme {
+  --font-*: initial;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --font-weight-*: initial;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --text-*: initial;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 1rem;
+  --text-base--line-height: 1.65;
+  --text-lg: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
+  --text-lg--line-height: 1.15;
+
+  --color-ink: #1a2e1a;
+  --color-beige-50: #fefcf3;
+  --color-beige-100: #fdf6e3;
+  --color-beige-200: #f5edd6;
+
+  --shadow-soft: 0 4px 20px rgba(20, 83, 45, 0.08);
+  --shadow-lift: 0 20px 60px rgba(20, 83, 45, 0.15);
+
+  --animate-marquee: marquee 60s linear infinite;
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+html {
+  scroll-padding-top: 4.5rem;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+body {
+  background: var(--color-beige-50);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+/* ---- @starting-style enter transitions (with allow-discrete for display) ---- */
+
+/* Mobile nav drawer: display:none -> flex animates in without JS timers. */
+.menu-panel {
+  transition:
+    opacity 0.35s ease,
+    translate 0.35s ease,
+    display 0.35s allow-discrete,
+    overlay 0.35s allow-discrete;
+}
+.menu-panel[data-open="false"] {
+  display: none;
+  opacity: 0;
+  translate: 100% 0;
+}
+.menu-panel[data-open="true"] {
+  display: flex;
+  opacity: 1;
+  translate: 0 0;
+}
+@starting-style {
+  .menu-panel[data-open="true"] {
+    opacity: 0;
+    translate: 100% 0;
+  }
+}
+
+.menu-scrim {
+  transition:
+    opacity 0.35s ease,
+    display 0.35s allow-discrete;
+}
+.menu-scrim[data-open="false"] {
+  display: none;
+  opacity: 0;
+}
+.menu-scrim[data-open="true"] {
+  display: block;
+  opacity: 1;
+}
+@starting-style {
+  .menu-scrim[data-open="true"] {
+    opacity: 0;
+  }
+}
+
+/* Dialogs (plant modal + lightbox): Radix mounts on open, so the mount state is the "starting style". */
+.dialog-scrim,
+.dialog-box {
+  transition:
+    opacity 0.3s ease,
+    scale 0.35s cubic-bezier(0.34, 1.4, 0.64, 1),
+    translate 0.35s ease,
+    display 0.35s allow-discrete;
+}
+.dialog-scrim[data-state="open"] {
+  opacity: 1;
+}
+.dialog-box[data-state="open"] {
+  opacity: 1;
+  scale: 1;
+}
+@starting-style {
+  .dialog-scrim[data-state="open"] {
+    opacity: 0;
+  }
+  .dialog-box[data-state="open"] {
+    opacity: 0;
+    scale: 0.92;
+  }
+}
+
+/* Elements that appear after a filter/search change */
+.pop-in {
+  transition:
+    opacity 0.4s ease,
+    translate 0.4s ease;
+}
+@starting-style {
+  .pop-in {
+    opacity: 0;
+    translate: 0 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -3,11 +3,11 @@ import { MapPin, MessageCircle, Phone } from "lucide-react";
 import { NAV_LINKS, PHONE, waLink } from "@/lib/site";
 
 const CATS = ["Fruit Plants", "Indoor Plants", "Outdoor Plants", "Ornamental Plants"];
-const link = "text-sm text-white/70 transition-colors hover:text-green-300";
+const link = "text-sm text-white/70 transition-colors hover:text-lime";
 
 export function Footer() {
   return (
-    <footer className="bg-green-950 text-white">
+    <footer className="bg-green-950 pb-16 text-white md:pb-0">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 min-[480px]:grid-cols-2 md:px-8 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <div className="flex items-center gap-2">

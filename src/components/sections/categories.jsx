@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Sprout } from "lucide-react";
+import { ArrowUpRight, Sprout } from "lucide-react";
 import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
 import { CountUp } from "@/components/react-bits/count-up";
-import { HoverIcon } from "@/components/hover-icon";
 import { CATEGORIES } from "@/lib/site";
 
 export function Categories() {
@@ -17,34 +16,29 @@ export function Categories() {
           title="What We Grow"
           desc="Explore our carefully curated categories of premium nursery plants"
         />
-        <div className="grid grid-cols-1 gap-4 min-[480px]:grid-cols-2 md:gap-6 lg:grid-cols-4">
-          {CATEGORIES.map((c, i) => (
-            <Reveal key={c.name} delay={i * 0.08} from="scale">
-              <a
-                href="#plants"
-                className="group relative block aspect-[4/5] overflow-hidden rounded-3xl shadow-soft"
-              >
-                <Image
-                  src={c.image}
-                  alt={c.name}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 480px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-green-950/85 via-green-950/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                  <h3 className="text-base font-bold">{c.name}</h3>
+      </div>
+      {/* Phones: swipe rail. Desktop: one wide tile + three small ones. */}
+      <div className="rail flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 md:mx-auto md:grid md:max-w-7xl md:snap-none md:grid-cols-4 md:grid-rows-2 md:gap-4 md:overflow-visible md:px-8">
+        {CATEGORIES.map((c, i) => (
+          <Reveal key={c.name} delay={i * 0.06} from="up" className={i === 0 ? "w-[78%] shrink-0 snap-start md:col-span-2 md:row-span-2 md:w-auto" : "w-[62%] shrink-0 snap-start md:w-auto"}>
+            <a href="#plants" className="group relative block h-full min-h-72 overflow-hidden rounded-[28px] md:min-h-0">
+              <div className={i === 0 ? "relative aspect-[4/5] md:aspect-auto md:h-full md:min-h-[32rem]" : "relative aspect-[4/5] md:aspect-[4/3]"}>
+                <Image src={c.image} alt={c.name} fill sizes="(min-width: 768px) 40vw, 78vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-green-950/85 to-transparent p-4 pt-16 text-white md:p-5">
+                <div>
+                  <h3 className="text-base">{c.name}</h3>
                   <p className="text-sm text-white/80">
                     {c.count ? <><CountUp to={c.count} suffix="+" /> {c.note}</> : c.note}
                   </p>
-                  <span className="mt-2 inline-flex items-center gap-1 text-sm font-bold text-green-300">
-                    Explore <HoverIcon icon={ArrowRight} variant="nudge" className="size-4" />
-                  </span>
                 </div>
-              </a>
-            </Reveal>
-          ))}
-        </div>
+                <span className="grid size-9 shrink-0 place-items-center rounded-full bg-lime text-green-950 transition-transform group-hover:rotate-45">
+                  <ArrowUpRight className="size-4" />
+                </span>
+              </div>
+            </a>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

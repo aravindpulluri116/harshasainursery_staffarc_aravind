@@ -5,6 +5,7 @@
 @theme {
   --font-*: initial;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 
   --font-weight-*: initial;
   --font-weight-normal: 400;
@@ -15,16 +16,30 @@
   --text-sm--line-height: 1.5;
   --text-base: 1rem;
   --text-base--line-height: 1.65;
-  --text-lg: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
-  --text-lg--line-height: 1.15;
+  --text-lg: clamp(2rem, 1.3rem + 3vw, 3.5rem);
+  --text-lg--line-height: 1.08;
 
-  --color-ink: #1a2e1a;
-  --color-beige-50: #fefcf3;
-  --color-beige-100: #fdf6e3;
-  --color-beige-200: #f5edd6;
+  --color-ink: #16261c;
+  --color-beige-50: #fbf7ee;
+  --color-beige-100: #f4ecd9;
+  --color-beige-200: #eadfc4;
+  --color-clay: #b4532a;
 
-  --shadow-soft: 0 4px 20px rgba(20, 83, 45, 0.08);
-  --shadow-lift: 0 20px 60px rgba(20, 83, 45, 0.15);
+  /* Deeper forest greens */
+  --color-green-50: #f1f7f2;
+  --color-green-100: #dcebdf;
+  --color-green-200: #b9d8c1;
+  --color-green-300: #8fc09f;
+  --color-green-400: #5fa377;
+  --color-green-500: #3f8559;
+  --color-green-600: #2f6b47;
+  --color-green-700: #25563a;
+  --color-green-800: #1d432e;
+  --color-green-900: #153424;
+  --color-green-950: #0c2217;
+
+  --shadow-soft: 0 6px 24px rgba(12, 34, 23, 0.08);
+  --shadow-lift: 0 24px 60px rgba(12, 34, 23, 0.22);
 
   --animate-marquee: marquee 60s linear infinite;
   @keyframes marquee {
@@ -45,6 +60,12 @@ html.lenis body {
   overflow: clip;
 }
 
+/* Stop sideways panning on phones (slide-in blocks and decorative offsets stick out). */
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   background: var(--color-beige-50);
   color: var(--color-ink);
@@ -58,7 +79,9 @@ h1,
 h2,
 h3,
 h4 {
+  font-family: var(--font-display);
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 /* ---- @starting-style enter transitions (with allow-discrete for display) ---- */

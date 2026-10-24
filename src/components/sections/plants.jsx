@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 
 const TAG_STYLE = {
   imported: "bg-amber-400 text-ink",
-  exotic: "bg-purple-600 text-white",
+  exotic: "bg-clay text-white",
   bestseller: "bg-green-700 text-white",
 };
 

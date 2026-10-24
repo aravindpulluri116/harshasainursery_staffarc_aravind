@@ -9,7 +9,7 @@ export const metadata = {
   title: "Harsha Sai Nursery — Premium Quality Nursery Plants, Burrilanka",
   description:
     "Harsha Sai Nursery in Burrilanka, Andhra Pradesh: 103+ exotic and imported fruit plant varieties from Thailand, Japan, Vietnam and Brazil. Bulk and wholesale orders available.",
-  icons: { icon: "/assets/logo.webp" },
+  icons: { icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/logo.webp` },
 };
 
 export const viewport = { width: "device-width", initialScale: 1, themeColor: "#14532d" };

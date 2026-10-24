@@ -5,6 +5,7 @@
 @theme {
   --font-*: initial;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
 
   --font-weight-*: initial;
   --font-weight-normal: 400;
@@ -15,16 +16,30 @@
   --text-sm--line-height: 1.5;
   --text-base: 1rem;
   --text-base--line-height: 1.65;
-  --text-lg: clamp(1.75rem, 1.2rem + 2.2vw, 3rem);
-  --text-lg--line-height: 1.15;
+  --text-lg: clamp(2.1rem, 1.2rem + 3.6vw, 3.75rem);
+  --text-lg--line-height: 1.04;
 
-  --color-ink: #1a2e1a;
-  --color-beige-50: #fefcf3;
-  --color-beige-100: #fdf6e3;
-  --color-beige-200: #f5edd6;
+  --color-ink: #12231a;
+  --color-beige-50: #f6f2e7;
+  --color-beige-100: #efe9d9;
+  --color-beige-200: #e4dcc6;
+  --color-lime: #d6f06b;
+  --color-lime-dark: #c3e04f;
 
-  --shadow-soft: 0 4px 20px rgba(20, 83, 45, 0.08);
-  --shadow-lift: 0 20px 60px rgba(20, 83, 45, 0.15);
+  --color-green-50: #eef4ee;
+  --color-green-100: #dbe8dc;
+  --color-green-200: #bcd4bf;
+  --color-green-300: #94b99a;
+  --color-green-400: #66966f;
+  --color-green-500: #437a52;
+  --color-green-600: #2f6340;
+  --color-green-700: #214d31;
+  --color-green-800: #183b26;
+  --color-green-900: #112c1c;
+  --color-green-950: #0b1f14;
+
+  --shadow-soft: 0 2px 14px rgba(11, 31, 20, 0.07);
+  --shadow-lift: 0 24px 60px rgba(11, 31, 20, 0.25);
 
   --animate-marquee: marquee 60s linear infinite;
   @keyframes marquee {
@@ -45,6 +60,11 @@ html.lenis body {
   overflow: clip;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   background: var(--color-beige-50);
   color: var(--color-ink);
@@ -58,7 +78,17 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Hide the scrollbar on horizontal snap rails */
+.rail {
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
 }
 
 /* ---- @starting-style enter transitions (with allow-discrete for display) ---- */

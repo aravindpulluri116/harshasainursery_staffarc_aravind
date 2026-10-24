@@ -46,16 +46,16 @@ export function Hero() {
       <div className="hero-bg absolute inset-x-0 -top-[10%] -bottom-[10%] -z-20">
         <Image src="/assets/hero-bg.webp" alt="" fill priority sizes="100vw" className="object-cover" />
       </div>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-green-950/70 via-green-950/50 to-green-950/80" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-green-950/60 via-green-950/35 to-green-950/90" />
 
       <div className="hero-content mx-auto flex max-w-3xl flex-col items-center px-4 pt-20 text-center text-white md:px-8">
-        <Image src="/assets/logo.webp" alt="Harsha Sai Nursery" width={112} height={112} priority className="hero-item mb-4 size-20 rounded-full object-cover shadow-lift md:size-28" />
+        <Image src="/assets/logo.webp" alt="Harsha Sai Nursery" width={112} height={112} priority className="hero-item mb-4 size-20 rounded-full object-cover shadow-lift ring-4 ring-amber-300/70 md:size-28" />
         <p className="hero-item mb-3 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm font-bold backdrop-blur">
           <Leaf className="size-4" /> Est. Burrilanka, Andhra Pradesh
         </p>
         <h1 className="text-lg font-bold">
           <BlurText as="span" text="Premium Quality" className="block" />
-          <BlurText as="span" text="Nursery Plants" delay={0.09} className="block text-green-300" />
+          <BlurText as="span" text="Nursery Plants" delay={0.09} className="block text-amber-300" />
         </h1>
         <p className="hero-item mt-4 max-w-xl text-base text-white/85">
           Specializing in 103+ exotic fruit plant varieties — imported from Thailand, Japan, Brazil &amp; beyond

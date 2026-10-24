@@ -33,7 +33,7 @@ export function About() {
         </Reveal>
 
         <Reveal from="right">
-          <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-1.5 text-sm font-bold text-green-800">
+          <span className="mb-4 inline-flex items-center gap-2 border-b-2 border-amber-400 pb-1 text-sm font-bold tracking-widest text-green-800 uppercase">
             <Sprout className="size-4" /> About Us
           </span>
           <h2 className="text-lg font-bold">Harsha Sai Nursery</h2>

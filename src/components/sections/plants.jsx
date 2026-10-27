@@ -59,7 +59,7 @@ export function Plants() {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 pb-14 md:px-8 md:pb-20">
-        <div className="sticky top-16 z-30 -mx-4 mb-5 flex flex-col gap-3 border-b border-ink/10 bg-beige-50/95 px-4 py-3 backdrop-blur md:top-[72px] md:-mx-8 md:mb-8 md:flex-row md:items-center md:justify-between md:px-8">
+        <div className="-mx-4 mb-5 flex flex-col gap-3 border-b border-ink/10 bg-beige-50/95 px-4 py-3 backdrop-blur md:-mx-8 md:mb-8 md:flex-row md:items-center md:justify-between md:px-8">
           <div role="tablist" aria-label="Filter plants" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0">
             {FILTERS.map((f) => (
               <button
@@ -160,3 +160,4 @@ export function Plants() {
     </section>
   );
 }
+

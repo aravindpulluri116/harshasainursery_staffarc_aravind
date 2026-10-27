@@ -138,11 +138,11 @@ export function Navbar() {
       </div>
 
       {/* Small + medium: drawer that animates display:none -> flex via @starting-style */}
-      <div className="menu-scrim fixed inset-0 top-16 -z-10 bg-black/40 lg:hidden" data-open={open} onClick={() => setOpen(false)} />
+      <div className="menu-scrim fixed inset-0 top-16 h-[calc(100dvh-4rem)] md:h-[calc(100dvh-4.5rem)] -z-10 bg-black/40 lg:hidden" data-open={open} onClick={() => setOpen(false)} />
       <nav
         data-open={open}
         aria-label="Mobile"
-        className="menu-panel fixed top-16 right-0 bottom-0 w-[min(20rem,85vw)] flex-col gap-1 bg-beige-50 p-4 shadow-lift md:top-[72px] lg:hidden"
+        className="menu-panel fixed top-16 right-0 bottom-0 h-[calc(100dvh-4rem)] overflow-y-auto md:h-[calc(100dvh-4.5rem)] w-[min(20rem,85vw)] flex-col gap-1 bg-beige-50 p-4 shadow-lift md:top-[72px] lg:hidden"
       >
         {NAV_LINKS.map((l, i) => (
           <motion.a

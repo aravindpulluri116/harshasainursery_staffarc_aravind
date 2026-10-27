@@ -7,8 +7,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-green-700 text-white hover:bg-green-800",
-        outline: "border border-white/70 text-white hover:bg-white hover:text-green-900",
+        default: "bg-lime text-green-950 hover:bg-lime-dark",
+        outline: "border border-ink/25 text-ink hover:bg-ink hover:text-white",
         outlineDark: "border border-green-700 text-green-800 hover:bg-green-700 hover:text-white",
         whatsapp: "bg-[#25d366] text-white hover:bg-[#1ebe5a]",
         ghost: "text-ink hover:bg-green-100",

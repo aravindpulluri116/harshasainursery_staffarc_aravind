@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, MessageCircle, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { HoverIcon } from "@/components/hover-icon";
 import { useLenis } from "@/components/providers";
-import { NAV_LINKS, waLink } from "@/lib/site";
+import { NAV_LINKS, PHONE, waLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
@@ -50,13 +50,14 @@ export function Navbar() {
   };
 
   return (
+    <>
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: hidden && !open ? -100 : 0 }}
       transition={{ type: "spring", stiffness: 260, damping: 24 }}
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
-        scrolled || open ? "bg-white/90 shadow-soft backdrop-blur-md" : "bg-transparent",
+        "bg-beige-50/90 backdrop-blur-md", scrolled || open ? "border-b border-ink/10" : "border-b border-transparent",
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-[72px] md:px-8">
@@ -68,8 +69,8 @@ export function Navbar() {
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
         >
-          <Image src="/assets/logo.webp" alt="Harsha Sai Nursery" width={44} height={44} className="size-9 rounded-full object-cover md:size-11" />
-          <span className={cn("text-base font-bold transition-colors", scrolled || open ? "text-green-900" : "text-white")}>
+          <Image src="/assets/nursery-logo.svg" alt="Harsha Sai Nursery" width={116} height={64} className="h-12 w-auto shrink-0 object-contain md:h-14" />
+          <span className="font-display text-base font-semibold text-ink">
             Harsha Sai Nursery
           </span>
         </motion.a>
@@ -86,14 +87,14 @@ export function Navbar() {
               transition={{ type: "spring", stiffness: 400, damping: 18 }}
               className={cn(
                 "relative rounded-full px-4 py-2 text-sm font-bold transition-colors",
-                active === l.href ? "text-white" : scrolled ? "text-ink hover:bg-green-100" : "text-white/90 hover:bg-white/15",
+                active === l.href ? "text-ink" : "text-ink/60 hover:text-ink",
               )}
             >
               {/* One pill that springs between links as the active section changes */}
               {active === l.href && (
                 <motion.span
                   layoutId="nav-pill"
-                  className="absolute inset-0 rounded-full bg-green-700"
+                  className="absolute inset-x-4 bottom-1 h-0.5 rounded-full bg-green-600"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -117,7 +118,7 @@ export function Navbar() {
             onClick={() => setOpen((o) => !o)}
             className={cn(
               "grid size-10 place-items-center rounded-full transition-colors lg:hidden",
-              scrolled || open ? "text-green-900 hover:bg-green-100" : "text-white hover:bg-white/15",
+              "text-ink hover:bg-ink/10",
             )}
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -141,7 +142,7 @@ export function Navbar() {
       <nav
         data-open={open}
         aria-label="Mobile"
-        className="menu-panel fixed top-16 right-0 bottom-0 w-[min(20rem,85vw)] flex-col gap-1 bg-white p-4 shadow-lift md:top-[72px] lg:hidden"
+        className="menu-panel fixed top-16 right-0 bottom-0 w-[min(20rem,85vw)] flex-col gap-1 bg-beige-50 p-4 shadow-lift md:top-[72px] lg:hidden"
       >
         {NAV_LINKS.map((l, i) => (
           <motion.a
@@ -152,7 +153,7 @@ export function Navbar() {
             transition={{ type: "spring", stiffness: 220, damping: 20, delay: open ? 0.08 + i * 0.06 : 0 }}
             className={cn(
               "rounded-xl px-4 py-3 text-base font-bold transition-colors",
-              active === l.href ? "bg-green-100 text-green-800" : "text-ink hover:bg-green-50",
+              active === l.href ? "bg-green-100 text-green-900" : "text-ink hover:bg-green-50",
             )}
           >
             {l.label}
@@ -165,5 +166,16 @@ export function Navbar() {
         </Button>
       </nav>
     </motion.header>
+    {/* Phones: always-visible call / WhatsApp bar */}
+    <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-ink/10 bg-beige-50/95 p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
+      <Button asChild variant="outline">
+        <a href={`tel:${PHONE}`}><Phone className="size-4" /> Call</a>
+      </Button>
+      <Button asChild variant="whatsapp">
+        <a href={waLink()} target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> WhatsApp</a>
+      </Button>
+    </div>
+
+    </>
   );
 }

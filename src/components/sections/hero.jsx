@@ -1,40 +1,21 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "motion/react";
 import { Phone, MessageCircle, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BlurText } from "@/components/react-bits/blur-text";
 import { HoverIcon } from "@/components/hover-icon";
 import { useLenis } from "@/components/providers";
 import { PHONE, waLink } from "@/lib/site";
 
+const FACTS = [
+  ["103+", "exotic fruit plant varieties"],
+  ["Imported", "from Thailand, Japan, Vietnam, Brazil & beyond"],
+  ["Bulk", "orders and wholesale available"],
+];
+
 export function Hero() {
-  const root = useRef(null);
   const lenis = useLenis();
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.from(".hero-item", { y: 36, opacity: 0, duration: 0.9, ease: "power3.out", stagger: 0.14, delay: 0.1 });
-      // Background drifts slower than the page; content fades as it scrolls away
-      gsap.to(".hero-bg", {
-        yPercent: 18,
-        ease: "none",
-        scrollTrigger: { trigger: root.current, start: "top top", end: "bottom top", scrub: true },
-      });
-      gsap.to(".hero-content", {
-        opacity: 0,
-        y: -60,
-        ease: "none",
-        scrollTrigger: { trigger: root.current, start: "40% top", end: "bottom top", scrub: true },
-      });
-    }, root);
-    return () => ctx.revert();
-  }, []);
-
   const toPlants = (e) => {
     e.preventDefault();
     if (lenis) lenis.scrollTo("#plants", { offset: -72 });
@@ -42,39 +23,80 @@ export function Hero() {
   };
 
   return (
-    <section ref={root} id="home" className="relative isolate flex min-h-svh items-center justify-center overflow-hidden">
-      <div className="hero-bg absolute inset-x-0 -top-[10%] -bottom-[10%] -z-20">
-        <Image src="/assets/hero-bg.webp" alt="" fill priority sizes="100vw" className="object-cover" />
-      </div>
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-green-950/70 via-green-950/50 to-green-950/80" />
+    <section id="home" className="relative overflow-hidden bg-beige-50 pt-24 pb-10 md:pt-32 md:pb-16">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-5 inline-flex items-center gap-2 text-sm font-bold tracking-widest text-green-600 uppercase"
+          >
+            <Leaf className="size-4" /> Est. Burrilanka, Andhra Pradesh
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.08, type: "spring", stiffness: 90, damping: 18 }}
+            className="text-[clamp(2.75rem,1.4rem+6vw,5.5rem)] leading-[0.98] text-ink"
+          >
+            Premium Quality <span className="italic text-green-600">Nursery Plants</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.18 }}
+            className="mt-5 max-w-lg text-base text-ink/70 md:text-[1.125rem]"
+          >
+            Specializing in 103+ exotic fruit plant varieties — imported from Thailand, Japan, Brazil &amp; beyond
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.26 }}
+            className="mt-7 flex flex-col gap-3 sm:flex-row"
+          >
+            <Button asChild size="lg" className="bg-green-900 text-white hover:bg-green-800">
+              <a href="#plants" onClick={toPlants}>Explore Plants</a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href={`tel:${PHONE}`}>
+                <HoverIcon icon={Phone} variant="wiggle" className="size-4" /> Call Now
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="whatsapp">
+              <a href={waLink()} target="_blank" rel="noreferrer">
+                <HoverIcon icon={MessageCircle} variant="wiggle" className="size-4" /> WhatsApp
+              </a>
+            </Button>
+          </motion.div>
 
-      <div className="hero-content mx-auto flex max-w-3xl flex-col items-center px-4 pt-20 text-center text-white md:px-8">
-        <Image src="/assets/logo.webp" alt="Harsha Sai Nursery" width={112} height={112} priority className="hero-item mb-4 size-20 rounded-full object-cover shadow-lift md:size-28" />
-        <p className="hero-item mb-3 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm font-bold backdrop-blur">
-          <Leaf className="size-4" /> Est. Burrilanka, Andhra Pradesh
-        </p>
-        <h1 className="text-lg font-bold">
-          <BlurText as="span" text="Premium Quality" className="block" />
-          <BlurText as="span" text="Nursery Plants" delay={0.09} className="block text-green-300" />
-        </h1>
-        <p className="hero-item mt-4 max-w-xl text-base text-white/85">
-          Specializing in 103+ exotic fruit plant varieties — imported from Thailand, Japan, Brazil &amp; beyond
-        </p>
-        <div className="hero-item mt-6 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center md:mt-8">
-          <Button asChild size="lg">
-            <a href="#plants" onClick={toPlants}>Explore Plants</a>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a href={`tel:${PHONE}`}>
-              <HoverIcon icon={Phone} variant="wiggle" className="size-4" /> Call Now
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="whatsapp">
-            <a href={waLink()} target="_blank" rel="noreferrer">
-              <HoverIcon icon={MessageCircle} variant="wiggle" className="size-4" /> WhatsApp
-            </a>
-          </Button>
+          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-ink/15 pt-6">
+            {FACTS.map(([n, label]) => (
+              <div key={n}>
+                <dt className="font-display text-[1.5rem] leading-none font-semibold text-ink md:text-4xl">{n}</dt>
+                <dd className="mt-2 text-sm leading-snug text-ink/60">{label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
+
+        {/* Photo mosaic: tall arch + two stacked tiles */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.15, type: "spring", stiffness: 70, damping: 16 }}
+          className="grid grid-cols-[1.2fr_1fr] gap-3 md:gap-4"
+        >
+          <div className="relative row-span-2 aspect-[3/5] overflow-hidden rounded-t-[999px] rounded-b-3xl bg-green-100">
+            <Image src="/assets/hero-bg.webp" alt="Harsha Sai Nursery grounds" fill priority sizes="(min-width: 1024px) 30vw, 55vw" className="object-cover" />
+          </div>
+          <div className="relative aspect-square overflow-hidden rounded-3xl bg-green-100">
+            <Image src="/assets/fruit.webp" alt="Fruit plants" fill priority sizes="(min-width: 1024px) 22vw, 40vw" className="object-cover" />
+          </div>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-green-950">
+            <Image src="/assets/about.webp" alt="Mango orchard at Harsha Sai Nursery" fill sizes="(min-width: 1024px) 22vw, 40vw" className="object-cover" />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

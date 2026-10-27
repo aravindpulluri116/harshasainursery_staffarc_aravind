@@ -15,14 +15,14 @@ import { FILTERS, TAGS, waLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const TAG_STYLE = {
-  imported: "bg-amber-400 text-ink",
-  exotic: "bg-purple-600 text-white",
-  bestseller: "bg-green-700 text-white",
+  imported: "bg-white text-ink",
+  exotic: "bg-lime text-green-950",
+  bestseller: "bg-green-900 text-white",
 };
 
 function PlantTag({ tag }) {
   return (
-    <span className={cn("absolute top-2 left-2 z-10 rounded-full px-3 py-1 text-sm font-bold", TAG_STYLE[tag])}>
+    <span className={cn("absolute top-2 left-2 z-10 rounded-full px-3 py-1 text-sm font-bold shadow-soft", TAG_STYLE[tag])}>
       {TAGS[tag]}
     </span>
   );
@@ -44,17 +44,22 @@ export function Plants() {
   const step = (d) => setSelected((i) => (i + d + list.length) % list.length);
 
   return (
-    <section id="plants" className="bg-white">
-      {/* Banner */}
-      <div className="bg-gradient-to-br from-green-900 to-green-700 px-4 py-12 text-center text-white md:py-16">
-        <h2 className="text-lg font-bold">
-          <SplitText text="Our Plant Collections" />
-        </h2>
-        <p className="mx-auto mt-3 max-w-xl text-base text-white/85">203+ premium fruit plant varieties — hand-picked for quality</p>
+    <section id="plants" className="bg-beige-50">
+      {/* Header */}
+      <div className="mx-auto max-w-7xl px-4 pt-14 pb-2 md:px-8 md:pt-20">
+        <span className="mb-3 inline-flex items-center gap-2 text-sm font-bold tracking-widest text-green-600 uppercase">
+          <Sprout className="size-4" /> Catalogue
+        </span>
+        <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <h2 className="text-lg">
+            <SplitText text="Our Plant Collections" />
+          </h2>
+          <p className="max-w-sm text-base text-ink/65">203+ premium fruit plant varieties — hand-picked for quality</p>
+        </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-8 md:px-8 md:py-12">
-        <div className="mb-6 flex flex-col gap-4 md:mb-8 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto max-w-7xl px-4 pb-14 md:px-8 md:pb-20">
+        <div className="sticky top-16 z-30 -mx-4 mb-5 flex flex-col gap-3 border-b border-ink/10 bg-beige-50/95 px-4 py-3 backdrop-blur md:top-[72px] md:-mx-8 md:mb-8 md:flex-row md:items-center md:justify-between md:px-8">
           <div role="tablist" aria-label="Filter plants" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0">
             {FILTERS.map((f) => (
               <button
@@ -64,11 +69,11 @@ export function Plants() {
                 onClick={() => setFilter(f.key)}
                 className={cn(
                   "relative shrink-0 rounded-full px-5 py-2 text-sm font-bold transition-colors",
-                  filter === f.key ? "text-white" : "bg-green-50 text-green-900 hover:bg-green-100",
+                  filter === f.key ? "text-white" : "bg-white text-ink/80 ring-1 ring-ink/10 hover:bg-green-50",
                 )}
               >
                 {filter === f.key && (
-                  <motion.span layoutId="filter-pill" className="absolute inset-0 -z-0 rounded-full bg-green-700" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
+                  <motion.span layoutId="filter-pill" className="absolute inset-0 -z-0 rounded-full bg-green-900" transition={{ type: "spring", stiffness: 380, damping: 30 }} />
                 )}
                 <span className="relative">{f.label}</span>
               </button>
@@ -87,7 +92,7 @@ export function Plants() {
             <p className="text-base text-ink/60">Try another plant name.</p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4 xl:grid-cols-5">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
             {list.map((p, i) => (
               <motion.button
                 key={p.id}
@@ -98,16 +103,16 @@ export function Plants() {
                 viewport={{ once: true, amount: 0.15 }}
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 140, damping: 16 }}
-                className="group overflow-hidden rounded-2xl bg-white text-left shadow-soft ring-1 ring-green-100 [content-visibility:auto]"
+                className="group relative overflow-hidden rounded-[22px] bg-green-100 text-left [content-visibility:auto]"
               >
-                <div className="relative aspect-square overflow-hidden bg-green-50">
+                <div className="relative aspect-[4/5] overflow-hidden">
                   {p.tag && <PlantTag tag={p.tag} />}
-                  <PlantImage plant={p} loading="lazy" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-110" />
-                </div>
-                <div className="p-3 md:p-4">
-                  <h3 className="truncate text-base font-bold">{p.name}</h3>
-                  <p className="truncate text-sm text-ink/60">{p.type} • {p.origin}</p>
-                  {p.wholesale && <p className="text-sm font-bold text-green-700">Wholesale ₹{p.wholesale}/-</p>}
+                  <PlantImage plant={p} loading="lazy" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-green-950/90 via-green-950/55 to-transparent p-3 pt-14 text-white md:p-4 md:pt-16">
+                    <h3 className="truncate text-base">{p.name}</h3>
+                    <p className="truncate text-sm text-white/75">{p.type} • {p.origin}</p>
+                    {p.wholesale && <p className="text-sm font-bold text-lime">Wholesale ₹{p.wholesale}/-</p>}
+                  </div>
                 </div>
               </motion.button>
             ))}

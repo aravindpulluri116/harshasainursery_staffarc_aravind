@@ -11,7 +11,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 min-[480px]:grid-cols-2 md:px-8 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
         <div>
           <div className="flex items-center gap-2">
-            <Image src="/assets/logo.webp" alt="" width={40} height={40} className="size-10 rounded-full object-cover" />
+            <Image src="/assets/logo.webp" alt="Harsha Sai Nursery" width={116} height={64} className="h-16 w-auto shrink-0 object-contain" />
             <span className="text-base font-bold">Harsha Sai Nursery</span>
           </div>
           <p className="mt-3 max-w-xs text-sm text-white/70">

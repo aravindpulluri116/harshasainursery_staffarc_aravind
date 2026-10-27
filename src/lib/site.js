@@ -33,4 +33,5 @@ export const FILTERS = [
 ];
 
 // Indices (1-based) into the plants list shown in the gallery
-export const GALLERY_IDS = [4, 8, 17, 26, 6, 11, 38, 58, 72, 95, 29, 42];
+export const GALLERY_IDS = [4, 8, 17, 12, 6, 11, 3, 15, 9, 19, 5, 2];
+

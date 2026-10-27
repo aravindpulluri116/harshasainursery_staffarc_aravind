@@ -69,7 +69,7 @@ export function Navbar() {
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
         >
-          <Image src="/assets/logo.webp" alt="Harsha Sai Nursery" width={116} height={64} className="h-12 w-auto shrink-0 object-contain md:h-14" />
+          <Image src="/assets/nursery-logo.svg" alt="Harsha Sai Nursery" width={116} height={64} className="h-12 w-auto shrink-0 object-contain md:h-14" />
           <span className="font-display text-base font-semibold text-ink">
             Harsha Sai Nursery
           </span>

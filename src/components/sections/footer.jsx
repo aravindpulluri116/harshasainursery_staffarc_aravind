@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { NAV_LINKS, PHONE, waLink } from "@/lib/site";
 
 const CATS = ["Fruit Plants", "Indoor Plants", "Outdoor Plants", "Ornamental Plants"];
@@ -39,7 +40,7 @@ export function Footer() {
           <ul className="grid gap-2">
             <li className="flex items-center gap-2 text-sm text-white/70"><MapPin className="size-4" /> Burrilanka, 533126, AP</li>
             <li className="flex items-center gap-2"><Phone className="size-4 text-white/70" /><a href={`tel:${PHONE}`} className={link}>{PHONE}</a></li>
-            <li className="flex items-center gap-2"><MessageCircle className="size-4 text-white/70" /><a href={waLink()} target="_blank" rel="noreferrer" className={link}>WhatsApp Us</a></li>
+            <li className="flex items-center gap-2"><WhatsAppIcon className="size-4 text-white/70" /><a href={waLink()} target="_blank" rel="noreferrer" className={link}>WhatsApp Us</a></li>
           </ul>
         </div>
       </div>

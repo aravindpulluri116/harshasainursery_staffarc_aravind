@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Phone, MessageCircle, Leaf } from "lucide-react";
+import { Phone, Leaf } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { HoverIcon } from "@/components/hover-icon";
 import { useLenis } from "@/components/providers";
@@ -65,7 +66,7 @@ export function Hero() {
             </Button>
             <Button asChild size="lg" variant="whatsapp">
               <a href={waLink()} target="_blank" rel="noreferrer">
-                <HoverIcon icon={MessageCircle} variant="wiggle" className="size-4" /> WhatsApp
+                <HoverIcon icon={WhatsAppIcon} variant="wiggle" className="size-4" /> WhatsApp
               </a>
             </Button>
           </motion.div>

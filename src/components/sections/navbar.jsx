@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Menu, MessageCircle, Phone, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { HoverIcon } from "@/components/hover-icon";
 import { useLenis } from "@/components/providers";
@@ -106,7 +107,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <Button asChild variant="whatsapp" className="hidden md:inline-flex">
             <a href={waLink()} target="_blank" rel="noreferrer">
-              <HoverIcon icon={MessageCircle} variant="wiggle" className="size-4" /> WhatsApp
+              <HoverIcon icon={WhatsAppIcon} variant="wiggle" className="size-4" /> WhatsApp
             </a>
           </Button>
           <motion.button
@@ -161,7 +162,7 @@ export function Navbar() {
         ))}
         <Button asChild variant="whatsapp" size="lg" className="mt-3 md:hidden">
           <a href={waLink()} target="_blank" rel="noreferrer">
-            <MessageCircle /> WhatsApp
+            <WhatsAppIcon /> WhatsApp
           </a>
         </Button>
       </nav>
@@ -172,7 +173,7 @@ export function Navbar() {
         <a href={`tel:${PHONE}`}><Phone className="size-4" /> Call</a>
       </Button>
       <Button asChild variant="whatsapp">
-        <a href={waLink()} target="_blank" rel="noreferrer"><MessageCircle className="size-4" /> WhatsApp</a>
+        <a href={waLink()} target="_blank" rel="noreferrer"><WhatsAppIcon className="size-4" /> WhatsApp</a>
       </Button>
     </div>
 

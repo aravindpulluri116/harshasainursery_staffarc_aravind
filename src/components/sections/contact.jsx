@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "sonner";
-import { MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { MapPin, Phone, Send } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { Input, Textarea } from "@/components/ui/input";
 import { SectionHeader } from "@/components/section-header";
@@ -19,7 +20,7 @@ const schema = Yup.object({
 
 const INFO = [
   { icon: Phone, label: "Phone", value: PHONE, href: `tel:${PHONE}`, variant: "wiggle" },
-  { icon: MessageCircle, label: "WhatsApp", value: PHONE, href: waLink(), variant: "wiggle" },
+  { icon: WhatsAppIcon, label: "WhatsApp", value: PHONE, href: waLink(), variant: "wiggle" },
   { icon: MapPin, label: "Location", value: "Burrilanka, AP 533126", variant: "bounce" },
 ];
 

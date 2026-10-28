@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, MessageCircle, Search, Sprout } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search, Sprout } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -150,7 +151,7 @@ export function Plants() {
               <p className="text-base text-ink/75">{plant.desc}</p>
               <Button asChild variant="whatsapp" size="lg" className="mt-auto">
                 <a href={waLink(`Hi Harsha Sai Nursery! I'm interested in ${plant.name}. Please share details.`)} target="_blank" rel="noreferrer">
-                  <HoverIcon icon={MessageCircle} variant="wiggle" className="size-4" /> Enquire on WhatsApp
+                  <HoverIcon icon={WhatsAppIcon} variant="wiggle" className="size-4" /> Enquire on WhatsApp
                 </a>
               </Button>
             </div>

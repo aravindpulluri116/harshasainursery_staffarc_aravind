@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "sonner";
-import { MapPin, Phone, Send } from "lucide-react";
+import { Clock, MapPin, Phone, Send } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { Input, Textarea } from "@/components/ui/input";
 import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
 import { HoverIcon } from "@/components/hover-icon";
-import { PHONE, waLink } from "@/lib/site";
+import { HOURS, LICENCE, MAP_EMBED, PHONE, waLink } from "@/lib/site";
 
 const schema = Yup.object({
   name: Yup.string().trim().min(2, "Please enter your name").required("Name is required"),
@@ -22,6 +22,7 @@ const INFO = [
   { icon: Phone, label: "Phone", value: PHONE, href: `tel:${PHONE}`, variant: "wiggle" },
   { icon: WhatsAppIcon, label: "WhatsApp", value: PHONE, href: waLink(), variant: "wiggle" },
   { icon: MapPin, label: "Location", value: "Burrilanka, AP 533126", variant: "bounce" },
+  { icon: Clock, label: "Hours", value: HOURS, variant: "bounce" },
 ];
 
 export function Contact() {
@@ -54,13 +55,14 @@ export function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="h-72 w-full border-0 md:h-96 lg:h-full"
-              src="https://www.google.com/maps?q=Burrilanka,+Andhra+Pradesh+533126&output=embed"
+              src={MAP_EMBED}
             />
           </Reveal>
 
           <Reveal from="right" className="rounded-3xl bg-white p-5 shadow-soft md:p-8">
             <h3 className="text-base font-bold text-green-900">Harsha Sai Nursery</h3>
             <p className="mt-1 text-base text-ink/70">Burrilanka, 533126<br />Andhra Pradesh, India</p>
+            <p className="mt-1 text-sm font-bold text-green-700">{LICENCE}</p>
 
             <ul className="mt-5 grid gap-3">
               {INFO.map(({ icon, label, value, href, variant }) => (
@@ -94,7 +96,11 @@ export function Contact() {
               </Button>
             </form>
 
-            <Image src="/assets/board.webp" alt="Harsha Sai Nursery board" width={600} height={400} className="mx-auto mt-8 h-auto w-full max-w-xl rounded-2xl shadow-soft" />
+            <div className="mx-auto mt-8 flex max-w-xs flex-col items-center gap-3 rounded-2xl bg-green-50 p-6 shadow-soft">
+              <Image src="/assets/logo.webp" alt="Harsha Sai Nursery logo" width={120} height={120} className="size-24 rounded-full object-cover shadow-soft" />
+              <p className="text-base font-bold text-green-900">Harsha Sai Nursery</p>
+              <p className="text-sm text-ink/60">Burrilanka, Andhra Pradesh</p>
+            </div>
           </Reveal>
         </div>
 

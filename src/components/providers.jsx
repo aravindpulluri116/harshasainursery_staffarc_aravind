@@ -5,6 +5,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Toaster } from "sonner";
+import { CartProvider } from "@/lib/cart";
 
 const LenisContext = createContext(null);
 export const useLenis = () => useContext(LenisContext);
@@ -31,8 +32,10 @@ export function Providers({ children }) {
 
   return (
     <LenisContext.Provider value={lenis}>
-      {children}
-      <Toaster position="top-center" richColors closeButton />
+      <CartProvider>
+        {children}
+        <Toaster position="top-center" richColors closeButton />
+      </CartProvider>
     </LenisContext.Provider>
   );
 }

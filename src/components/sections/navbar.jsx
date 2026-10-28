@@ -3,19 +3,25 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, ShoppingBasket, X } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { HoverIcon } from "@/components/hover-icon";
+import { CartDrawer } from "@/components/cart-drawer";
+import { CheckoutModal } from "@/components/checkout-modal";
 import { useLenis } from "@/components/providers";
+import { useCart } from "@/lib/cart";
 import { NAV_LINKS, PHONE, waLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const lenis = useLenis();
+  const { count } = useCart();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("#home");
+  const [cartOpen, setCartOpen] = useState(false);
+  const [checkoutOpen, setCheckoutOpen] = useState(false);
 
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
@@ -105,6 +111,35 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          {/* Cart button */}
+          <motion.button
+            type="button"
+            onClick={() => setCartOpen(true)}
+            aria-label={`Open cart (${count} items)`}
+            whileTap={{ scale: 0.85 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            className={cn(
+              "relative grid size-10 place-items-center rounded-full transition-colors",
+              scrolled || open ? "text-green-900 hover:bg-green-100" : "text-white hover:bg-white/15",
+            )}
+          >
+            <ShoppingBasket className="size-5" />
+            <AnimatePresence>
+              {count > 0 && (
+                <motion.span
+                  key="badge"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0 }}
+                  transition={{ type: "spring", stiffness: 500, damping: 20 }}
+                  className="absolute -top-0.5 -right-0.5 grid size-5 place-items-center rounded-full bg-green-700 text-[10px] font-bold text-white"
+                >
+                  {count}
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </motion.button>
+
           <Button asChild variant="whatsapp" className="hidden md:inline-flex">
             <a href={waLink()} target="_blank" rel="noreferrer">
               <HoverIcon icon={WhatsAppIcon} variant="wiggle" className="size-4" /> WhatsApp
@@ -167,6 +202,9 @@ export function Navbar() {
         </Button>
       </nav>
     </motion.header>
+    <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} onCheckout={() => setCheckoutOpen(true)} />
+    <CheckoutModal open={checkoutOpen} onClose={() => setCheckoutOpen(false)} />
+
     {/* Phones: always-visible call / WhatsApp bar */}
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-ink/10 bg-beige-50/95 p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
       <Button asChild variant="outline">

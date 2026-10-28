@@ -1,5 +1,12 @@
 export const PHONE = "9949492854";
-export const WHATSAPP = "919949492854";
+export const WHATSAPP = "918143941125"; // Harsha Sai Nursery WhatsApp
+
+export const HOURS = "9 AM – 6:30 PM, Every Day";
+export const LICENCE = "Telangana Government Horticulture Licenced & Approved Nursery";
+
+// Real coordinates from Google Maps: 18.11702715, 78.35640861
+export const MAP_EMBED =
+  "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d954.2!2d78.35640861!3d18.11702715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDA3JzAxLjMiTiA3OMKwMjEnMjMuMSJF!5e0!3m2!1sen!2sin!4v1698000000000";
 
 export const waLink = (text = "Hi Harsha Sai Nursery! I'm interested in your plants.") =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`;

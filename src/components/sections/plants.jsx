@@ -1,8 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Search, Sprout } from "lucide-react";
+import { ChevronLeft, ChevronRight, Search, ShoppingBasket, Sprout } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,8 @@ import { PlantImage } from "@/components/plant-image";
 import { HoverIcon } from "@/components/hover-icon";
 import { plants } from "@/data/plants";
 import { FILTERS, TAGS, waLink } from "@/lib/site";
+import { useCart } from "@/lib/cart";
+import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 const TAG_STYLE = {
@@ -30,9 +32,15 @@ function PlantTag({ tag }) {
 }
 
 export function Plants() {
+  const { add } = useCart();
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(null); // index into `list`
+
+  const addToCart = useCallback((p) => {
+    add({ id: p.id, name: p.name, image: p.image, type: p.type, wholesale: p.wholesale ?? null });
+    toast.success(`${p.name} added to cart`);
+  }, [add]);
 
   const list = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -149,11 +157,16 @@ export function Plants() {
                 ))}
               </dl>
               <p className="text-base text-ink/75">{plant.desc}</p>
-              <Button asChild variant="whatsapp" size="lg" className="mt-auto">
+              <div className="mt-auto grid gap-2">
+                <Button onClick={() => addToCart(plant)} variant="default" size="lg" className="w-full">
+                  <ShoppingBasket className="size-4" /> Add to Cart
+                </Button>
+              <Button asChild variant="whatsapp" size="lg">
                 <a href={waLink(`Hi Harsha Sai Nursery! I'm interested in ${plant.name}. Please share details.`)} target="_blank" rel="noreferrer">
                   <HoverIcon icon={WhatsAppIcon} variant="wiggle" className="size-4" /> Enquire on WhatsApp
                 </a>
               </Button>
+              </div>
             </div>
           </DialogContent>
         )}

@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
-import { Menu, Phone, ShoppingBasket, X } from "lucide-react";
-import { WhatsAppIcon } from "@/components/icons/whatsapp";
+import { Menu, X } from "lucide-react";
+import ShoppingCartIcon from "@/components/ui/shopping-cart-icon";
+import WhatsappIcon from "@/components/ui/whatsapp-icon";
+import TelephoneIcon from "@/components/ui/telephone-icon";
 import { Button } from "@/components/ui/button";
-import { HoverIcon } from "@/components/hover-icon";
 import Link from "next/link";
 import { useLenis } from "@/components/providers";
 import { useCart } from "@/lib/cart";
@@ -121,7 +122,7 @@ export function Navbar() {
                 scrolled || open ? "text-green-900 hover:bg-green-100" : "text-white hover:bg-white/15",
               )}
             >
-              <ShoppingBasket className="size-5" />
+              <ShoppingCartIcon size={20} />
               <AnimatePresence>
                 {count > 0 && (
                   <motion.span
@@ -141,7 +142,7 @@ export function Navbar() {
 
           <Button asChild variant="whatsapp" className="hidden md:inline-flex">
             <a href={waLink()} target="_blank" rel="noreferrer">
-              <HoverIcon icon={WhatsAppIcon} variant="wiggle" className="size-4" /> WhatsApp
+              <WhatsappIcon size={16} /> WhatsApp
             </a>
           </Button>
           <motion.button
@@ -196,7 +197,7 @@ export function Navbar() {
         ))}
         <Button asChild variant="whatsapp" size="lg" className="mt-3 md:hidden">
           <a href={waLink()} target="_blank" rel="noreferrer">
-            <WhatsAppIcon /> WhatsApp
+            <WhatsappIcon size={18} /> WhatsApp
           </a>
         </Button>
       </nav>
@@ -204,10 +205,10 @@ export function Navbar() {
     {/* Phones: always-visible call / WhatsApp bar */}
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-ink/10 bg-beige-50/95 p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur md:hidden">
       <Button asChild variant="outline">
-        <a href={`tel:${PHONE}`}><Phone className="size-4" /> Call</a>
+        <a href={`tel:${PHONE}`}><TelephoneIcon size={16} /> Call</a>
       </Button>
       <Button asChild variant="whatsapp">
-        <a href={waLink()} target="_blank" rel="noreferrer"><WhatsAppIcon className="size-4" /> WhatsApp</a>
+        <a href={waLink()} target="_blank" rel="noreferrer"><WhatsappIcon size={16} /> WhatsApp</a>
       </Button>
     </div>
 

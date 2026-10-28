@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { toast } from "sonner";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { Navbar } from "@/components/sections/navbar";
@@ -50,11 +49,9 @@ export default function CheckoutPage() {
         note: [v.address.trim(), v.note.trim()].filter(Boolean).join(" | "),
         waNumber: WHATSAPP,
       });
-      window.open(url, "_blank", "noopener,noreferrer");
-      toast.success("Order sent to WhatsApp! 🌿");
       clear();
       resetForm();
-      router.push("/");
+      window.location.href = url;
     },
   });
 

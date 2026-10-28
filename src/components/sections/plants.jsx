@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState, useCallback } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Search, ShoppingBasket, Sprout } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
@@ -33,14 +35,17 @@ function PlantTag({ tag }) {
 
 export function Plants() {
   const { add } = useCart();
+  const router = useRouter();
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState(null); // index into `list`
 
   const addToCart = useCallback((p) => {
     add({ id: p.id, name: p.name, image: p.image, type: p.type, wholesale: p.wholesale ?? null });
-    toast.success(`${p.name} added to cart`);
-  }, [add]);
+    toast.success(`${p.name} added to cart — view cart to order`, {
+      action: { label: "View Cart", onClick: () => router.push("/cart") },
+    });
+  }, [add, router]);
 
   const list = useMemo(() => {
     const q = query.trim().toLowerCase();

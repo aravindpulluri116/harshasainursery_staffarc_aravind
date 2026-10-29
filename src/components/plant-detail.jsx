@@ -1,9 +1,10 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, ArrowRight, ShoppingBasket, Sprout } from "lucide-react";
-import { motion } from "motion/react";
+import { ArrowLeft, ArrowRight, Check, ShoppingBasket, Sprout } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { Navbar } from "@/components/sections/navbar";
 import { Footer } from "@/components/sections/footer";
 import { Button } from "@/components/ui/button";
@@ -23,6 +24,10 @@ const TAG_STYLE = {
 export function PlantDetail({ plant }) {
   const { add } = useCart();
   const router = useRouter();
+  const [added, setAdded] = useState(false);
+  const [pulse, setPulse] = useState(0);
+  const timer = useRef(null);
+  useEffect(() => () => clearTimeout(timer.current), []);
 
   if (!plant) {
     return (
@@ -48,6 +53,10 @@ export function PlantDetail({ plant }) {
 
   const addToCart = () => {
     add({ id: plant.id, name: plant.name, image: plant.image, type: plant.type, wholesale: plant.wholesale ?? null });
+    setAdded(true);
+    setPulse((n) => n + 1);
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => setAdded(false), 1800);
     toast.success(`${plant.name} added to cart — view cart to order`, {
       action: { label: "View Cart", onClick: () => router.push("/cart") },
     });
@@ -102,9 +111,23 @@ export function PlantDetail({ plant }) {
               </dl>
               <p className="text-base text-ink/75">{plant.desc}</p>
               <div className="mt-auto grid gap-2 pt-2">
-                <Button onClick={addToCart} size="lg" className="w-full">
-                  <ShoppingBasket className="size-4" /> Add to Cart
-                </Button>
+                <motion.div key={pulse} initial={{ scale: 1 }} animate={pulse ? { scale: [1, 1.06, 0.97, 1] } : { scale: 1 }} transition={{ duration: 0.45 }}>
+                  <Button onClick={addToCart} size="lg" className={cn("w-full overflow-hidden transition-colors duration-300", added && "bg-green-700 text-white hover:bg-green-700")}>
+                    <AnimatePresence mode="wait" initial={false}>
+                      <motion.span
+                        key={added ? "added" : "idle"}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.18 }}
+                        className="inline-flex items-center gap-2"
+                      >
+                        {added ? <Check className="size-4" /> : <ShoppingBasket className="size-4" />}
+                        {added ? "Added to Cart" : "Add to Cart"}
+                      </motion.span>
+                    </AnimatePresence>
+                  </Button>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -126,3 +149,4 @@ export function PlantDetail({ plant }) {
     </>
   );
 }
+

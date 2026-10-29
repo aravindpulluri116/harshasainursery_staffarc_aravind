@@ -116,7 +116,7 @@ export function Navbar() {
               aria-label={`View cart — ${count} item${count !== 1 ? "s" : ""}`}
               className={cn(
                 "relative grid size-10 place-items-center rounded-full transition-colors",
-                scrolled || open ? "text-green-900 hover:bg-green-100" : "text-white hover:bg-white/15",
+                "bg-green-800 text-white shadow-md ring-2 ring-white/80 hover:bg-green-900",
               )}
             >
               <ShoppingCartIcon size={20} />

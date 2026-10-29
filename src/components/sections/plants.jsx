@@ -4,12 +4,11 @@ import { useMemo, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Search, ShoppingBasket, Sprout } from "lucide-react";
+import { Search, ShoppingBasket, Sprout } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { SplitText } from "@/components/react-bits/split-text";
 import { PlantImage } from "@/components/plant-image";
 import { HoverIcon } from "@/components/hover-icon";
@@ -38,7 +37,6 @@ export function Plants() {
   const router = useRouter();
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
-  const [selected, setSelected] = useState(null); // index into `list`
 
   const addToCart = useCallback((p) => {
     add({ id: p.id, name: p.name, image: p.image, type: p.type, wholesale: p.wholesale ?? null });
@@ -54,8 +52,6 @@ export function Plants() {
     return out;
   }, [filter, query]);
 
-  const plant = selected === null ? null : list[selected];
-  const step = (d) => setSelected((i) => (i + d + list.length) % list.length);
 
   return (
     <section id="plants" className="bg-beige-50">
@@ -111,7 +107,7 @@ export function Plants() {
               <motion.button
                 key={p.id}
                 type="button"
-                onClick={() => setSelected(i)}
+                onClick={() => router.push(`/plants/${p.id}`)}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
@@ -134,43 +130,6 @@ export function Plants() {
         )}
       </div>
 
-      <Dialog open={!!plant} onOpenChange={(o) => !o && setSelected(null)}>
-        {plant && (
-          <DialogContent className="max-w-4xl p-0 md:grid md:grid-cols-2">
-            <div className="relative aspect-square md:aspect-auto md:min-h-[28rem]">
-              <PlantImage plant={plant} sizes="(min-width: 768px) 450px, 100vw" className="object-cover" />
-              <button onClick={() => step(-1)} aria-label="Previous plant" className="absolute top-1/2 left-3 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 shadow-soft transition-colors hover:bg-white">
-                <ChevronLeft className="size-5" />
-              </button>
-              <button onClick={() => step(1)} aria-label="Next plant" className="absolute top-1/2 right-3 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 shadow-soft transition-colors hover:bg-white">
-                <ChevronRight className="size-5" />
-              </button>
-            </div>
-            <div className="flex flex-col gap-3 p-5 md:p-8">
-              <DialogTitle asChild>
-                <h3 key={plant.id} className="text-lg font-bold text-green-900">
-                  <SplitText text={plant.name} stagger={0.03} />
-                </h3>
-              </DialogTitle>
-              <DialogDescription className="text-sm text-ink/60">{plant.type} • {plant.origin}</DialogDescription>
-              <dl className="divide-y divide-green-100 rounded-2xl bg-green-50 px-4 text-sm">
-                {[["Category", "Fruit Plant"], ["Type", plant.type], ["Origin", plant.origin], ...(plant.wholesale ? [["Price", `₹${plant.wholesale}/-`]] : [])].map(([k, v]) => (
-                  <div key={k} className="flex justify-between gap-4 py-3">
-                    <dt className="text-ink/60">{k}</dt>
-                    <dd className="text-right font-bold">{v}</dd>
-                  </div>
-                ))}
-              </dl>
-              <p className="text-base text-ink/75">{plant.desc}</p>
-              <div className="mt-auto grid gap-2">
-                <Button onClick={() => addToCart(plant)} variant="default" size="lg" className="w-full">
-                  <ShoppingBasket className="size-4" /> Add to Cart
-                </Button>
-              </div>
-            </div>
-          </DialogContent>
-        )}
-      </Dialog>
     </section>
   );
 }

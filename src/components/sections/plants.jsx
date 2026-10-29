@@ -166,11 +166,6 @@ export function Plants() {
                 <Button onClick={() => addToCart(plant)} variant="default" size="lg" className="w-full">
                   <ShoppingBasket className="size-4" /> Add to Cart
                 </Button>
-              <Button asChild variant="whatsapp" size="lg">
-                <a href={waLink(`Hi Harsha Sai Nursery! I'm interested in ${plant.name}. Please share details.`)} target="_blank" rel="noreferrer">
-                  <HoverIcon icon={WhatsAppIcon} variant="wiggle" className="size-4" /> Enquire on WhatsApp
-                </a>
-              </Button>
               </div>
             </div>
           </DialogContent>

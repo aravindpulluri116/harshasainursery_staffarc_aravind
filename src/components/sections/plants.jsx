@@ -125,7 +125,7 @@ export function Plants() {
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-green-950/90 via-green-950/55 to-transparent p-3 pt-14 text-white md:p-4 md:pt-16">
                     <h3 className="truncate text-base">{p.name}</h3>
                     <p className="truncate text-sm text-white/75">{p.type} • {p.origin}</p>
-                    {p.wholesale && <p className="text-sm font-bold text-lime">Wholesale ₹{p.wholesale}/-</p>}
+                    {p.wholesale && <p className="text-sm font-bold text-lime">₹{p.wholesale}/-</p>}
                   </div>
                 </div>
               </motion.button>
@@ -154,7 +154,7 @@ export function Plants() {
               </DialogTitle>
               <DialogDescription className="text-sm text-ink/60">{plant.type} • {plant.origin}</DialogDescription>
               <dl className="divide-y divide-green-100 rounded-2xl bg-green-50 px-4 text-sm">
-                {[["Category", "Fruit Plant"], ["Type", plant.type], ["Origin", plant.origin], ...(plant.wholesale ? [["Wholesale price", `₹${plant.wholesale}/-`]] : [])].map(([k, v]) => (
+                {[["Category", "Fruit Plant"], ["Type", plant.type], ["Origin", plant.origin], ...(plant.wholesale ? [["Price", `₹${plant.wholesale}/-`]] : [])].map(([k, v]) => (
                   <div key={k} className="flex justify-between gap-4 py-3">
                     <dt className="text-ink/60">{k}</dt>
                     <dd className="text-right font-bold">{v}</dd>
@@ -174,4 +174,5 @@ export function Plants() {
     </section>
   );
 }
+
 

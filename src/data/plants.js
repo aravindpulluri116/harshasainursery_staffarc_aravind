@@ -6,6 +6,7 @@ export const plants = [
   "origin": "Afghanistan, Pakistan",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "High-quality exotic nut tree. Suitable for long-term cultivation with strong growth and excellent yield."
  },
  {
@@ -15,6 +16,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "Unique fruit combining the sweetness of sapota with a banana-like elongated shape. Highly productive."
  },
  {
@@ -24,6 +26,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "A large-sized sapota variety known for its impressive weight and extra sweet, granular texture."
  },
  {
@@ -33,6 +36,7 @@ export const plants = [
   "origin": "India",
   "type": "Best Seller",
   "tag": "bestseller",
+  "wholesale": 99,
   "desc": "Popular round-shaped sapota with sweet, granular flesh. Very high yielding and commercial variety."
  },
  {
@@ -42,6 +46,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "The famous golden mango of Thailand. Exceptionally sweet, fiberless, and premium dessert quality."
  },
  {
@@ -51,6 +56,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "Stunning large mango with a deep red-to-ivory skin. Known for its aromatic, sweet, and firm pulp."
  },
  {
@@ -60,6 +66,7 @@ export const plants = [
   "origin": "Indonesia",
   "type": "Exotic",
   "tag": "exotic",
+  "wholesale": 99,
   "desc": "A unique dark purple, almost black mango. Intensely aromatic and sweet, a rare collector's choice."
  },
  {
@@ -69,6 +76,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "A unique Thai mango variety with a refreshing, citrusy undertone and bright yellow flesh."
  },
  {
@@ -78,6 +86,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "Commercial-grade Thai mango known for its large size, consistent sweetness, and long shelf life."
  },
  {
@@ -87,6 +96,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "A variety that fruits multiple times a year. Beautiful reddish blush when ripe and very sweet."
  },
  {
@@ -96,6 +106,7 @@ export const plants = [
   "origin": "Japan",
   "type": "Premium Imported",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "The world's most expensive mango. Ruby-red skin with exceptional sweetness and an aromatic melt-in-mouth texture."
  },
  {
@@ -105,6 +116,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Exotic",
   "tag": "exotic",
+  "wholesale": 99,
   "desc": "Unique Thai variety with a distinct bluish-green tint when young. Matures into a very sweet dessert mango."
  },
  {
@@ -114,6 +126,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "Premium Thai mango variety prized for its unique shape and high sugar content."
  },
  {
@@ -123,6 +136,7 @@ export const plants = [
   "origin": "Brazil",
   "type": "Exotic",
   "tag": "exotic",
+  "wholesale": 99,
   "desc": "A vibrant yellow tropical fruit with a tangy-sweet flavor profile, perfect for exotic fruit gardens."
  },
  {
@@ -132,6 +146,7 @@ export const plants = [
   "origin": "Philippines",
   "type": "Exotic",
   "tag": "exotic",
+  "wholesale": 99,
   "desc": "Also known as Cotton Fruit. This sweet variety has thick skin and delicious, soft, cottony segments inside."
  },
  {
@@ -141,6 +156,7 @@ export const plants = [
   "origin": "Philippines",
   "type": "Exotic",
   "tag": "exotic",
+  "wholesale": 99,
   "desc": "A striking fruit with a velvety, reddish-brown skin and a rich, creamy, cheese-like white flesh."
  },
  {
@@ -150,6 +166,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Premium Imported",
   "tag": "exotic",
+  "wholesale": 99,
   "desc": "A rare and beautiful longan variety with red skin and incredibly sweet, translucent flesh."
  },
  {
@@ -159,6 +176,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "Reliable and high-yielding longan variety that fruits abundantly during the main harvest season."
  },
  {
@@ -168,6 +186,7 @@ export const plants = [
   "origin": "Thailand",
   "type": "Imported Variety",
   "tag": "imported",
+  "wholesale": 99,
   "desc": "A top-quality longan variety noted for its consistent fruiting and thin-skinned, sweet fruits."
  },
  {
@@ -177,6 +196,8 @@ export const plants = [
   "origin": "Thailand",
   "type": "Exotic",
   "tag": "exotic",
+  "wholesale": 99,
   "desc": "Known for the subtle pinkish hue of its pulp. Extremely sweet and juicy with a small seed."
  },
 ];
+

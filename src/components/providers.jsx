@@ -34,7 +34,7 @@ export function Providers({ children }) {
     <LenisContext.Provider value={lenis}>
       <CartProvider>
         {children}
-        <Toaster position="top-center" richColors closeButton />
+        <Toaster position="top-center" richColors closeButton style={{ pointerEvents: "auto" }} />
       </CartProvider>
     </LenisContext.Provider>
   );

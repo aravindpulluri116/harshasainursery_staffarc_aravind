@@ -128,7 +128,7 @@ export function Navbar() {
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 20 }}
-                    className="absolute -top-0.5 -right-0.5 grid size-5 place-items-center rounded-full bg-green-700 text-[10px] font-bold text-white"
+                    className="absolute -top-0.5 -right-0.5 grid size-5 place-items-center rounded-full bg-orange-500 text-[10px] font-bold text-white ring-2 ring-white"
                   >
                     {count}
                   </motion.span>

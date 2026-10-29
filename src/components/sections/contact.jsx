@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { toast } from "sonner";
@@ -97,7 +96,6 @@ export function Contact() {
             </form>
 
             <div className="mx-auto mt-8 flex max-w-xs flex-col items-center gap-3 rounded-2xl bg-green-50 p-6 shadow-soft">
-              <Image src="/assets/logo.webp" alt="Harsha Sai Nursery logo" width={120} height={120} className="size-24 rounded-full object-cover shadow-soft" />
               <p className="text-base font-bold text-green-900">Harsha Sai Nursery</p>
               <p className="text-sm text-ink/60">Burrilanka, Andhra Pradesh</p>
             </div>

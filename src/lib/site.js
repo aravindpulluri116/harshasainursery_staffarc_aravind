@@ -20,9 +20,10 @@ export const waLink = (text = "Hi Harsha Sai Nursery! I'm interested in your pla
 export const NAV_LINKS = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
-  { href: "#plants", label: "Our Plants" },
+  { href: "/plants", label: "Our Plants" },
   { href: "#gallery", label: "Gallery" },
   { href: "#contact", label: "Contact Us" },
+  { href: "/certifications", label: "Certifications" },
 ];
 
 export const CATEGORIES = [
@@ -48,3 +49,4 @@ export const FILTERS = [
   { key: "Custard Apple", label: "Custard Apple" },
   { key: "Lemon", label: "Lemon" },
 ];
+

@@ -26,16 +26,15 @@ export function Footer() {
           <h4 className="mb-3 text-base font-bold">Quick Links</h4>
           <ul className="grid gap-2">
             {NAV_LINKS.map((l) => (
-              <li key={l.href}><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/${l.href}`} className={link}>{l.label === "About" ? "About Us" : l.label}</a></li>
+              <li key={l.href}><a href={l.href.startsWith("#") ? `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/${l.href}` : `${process.env.NEXT_PUBLIC_BASE_PATH || ""}${l.href}`} className={link}>{l.label === "About" ? "About Us" : l.label}</a></li>
             ))}
-            <li><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/certifications`} className={link}>Certifications</a></li>
           </ul>
         </div>
         <div>
           <h4 className="mb-3 text-base font-bold">Categories</h4>
           <ul className="grid gap-2">
             {CATS.map((c) => (
-              <li key={c}><a href="#plants" className={link}>{c}</a></li>
+              <li key={c}><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/plants`} className={link}>{c}</a></li>
             ))}
           </ul>
         </div>
@@ -59,3 +58,4 @@ export function Footer() {
     </footer>
   );
 }
+

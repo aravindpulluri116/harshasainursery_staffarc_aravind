@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const homeHref = (hash) => `${BASE}/${hash}`;
+const navHref = (href) => (href.startsWith("#") ? `${BASE}/${href}` : `${BASE}${href}`);
 
 export function Navbar() {
   const lenis = useLenis();
@@ -36,7 +37,7 @@ export function Navbar() {
   });
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((l) => document.querySelector(l.href)).filter(Boolean);
+    const sections = NAV_LINKS.filter((l) => l.href.startsWith("#")).map((l) => document.querySelector(l.href)).filter(Boolean);
     const io = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && setActive(`#${e.target.id}`)),
       { rootMargin: "-45% 0px -50% 0px" },
@@ -53,6 +54,8 @@ export function Navbar() {
 
   const go = (e, href) => {
     setOpen(false);
+    // Page links (e.g. /plants, /certifications) always follow the real URL.
+    if (!href.startsWith("#")) return;
     // On the homepage, smooth-scroll to the section. From other pages
     // (/certifications, /cart, /checkout, /plants/...), follow the real URL.
     const path = window.location.pathname.replace(/\/+$/, "");
@@ -90,7 +93,7 @@ export function Navbar() {
           {NAV_LINKS.map((l) => (
             <motion.a
               key={l.href}
-              href={homeHref(l.href)}
+              href={navHref(l.href)}
               onClick={(e) => go(e, l.href)}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.94 }}
@@ -189,7 +192,7 @@ export function Navbar() {
         {NAV_LINKS.map((l, i) => (
           <motion.a
             key={l.href}
-            href={homeHref(l.href)}
+            href={navHref(l.href)}
             onClick={(e) => go(e, l.href)}
             animate={open ? { x: 0, opacity: 1 } : { x: 40, opacity: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 20, delay: open ? 0.08 + i * 0.06 : 0 }}
@@ -221,3 +224,4 @@ export function Navbar() {
     </>
   );
 }
+

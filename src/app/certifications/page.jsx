@@ -1,3 +1,4 @@
+import { licenceCertificate } from "@/assets/catalogue-images-8";
 import Link from "next/link";
 import { ArrowLeft, BadgeCheck } from "lucide-react";
 import { Navbar } from "@/components/sections/navbar";
@@ -53,7 +54,11 @@ export default function CertificationsPage() {
             ))}
           </dl>
 
-          <p className="mt-5 text-sm text-ink/60">
+          <div className="mb-6">
+              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-800">Original licence certificate</p>
+              <img src={licenceCertificate} alt="Horticulture nursery licence certificate issued to Harsha Sai Nursery" className="w-full max-w-2xl rounded-lg border border-emerald-200 shadow-sm" />
+            </div>
+            <p className="mt-5 text-sm text-ink/60">
             Details are taken from the licence issued by the District Horticulture &amp; Sericulture Officer, Medak. Want to see the original licence? Ask us on WhatsApp.
           </p>
 
@@ -70,4 +75,4 @@ export default function CertificationsPage() {
       <Footer />
     </>
   );
-  }
+}

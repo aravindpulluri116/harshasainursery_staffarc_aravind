@@ -4,7 +4,7 @@ import { SectionHeader } from "@/components/section-header";
 import { Marquee } from "@/components/react-bits/marquee";
 import { plants } from "@/data/plants";
 
-const showcase = plants.slice(0, 20);
+const showcase = plants.filter((p) => p.image).slice(0, 20);
 
 export function FruitShowcase() {
   if (showcase.length === 0) return null;
@@ -15,7 +15,7 @@ export function FruitShowcase() {
         <SectionHeader
           badge={<><Star className="size-4" /> Signature Collection</>}
           title="Our Fruit Plants"
-          desc="Premium imported varieties — continuously scrolling showcase"
+          desc="Real plants from our nursery"
         />
       </div>
       <Marquee>

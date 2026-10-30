@@ -27,6 +27,7 @@ export function Footer() {
             {NAV_LINKS.map((l) => (
               <li key={l.href}><a href={l.href} className={link}>{l.label === "About" ? "About Us" : l.label}</a></li>
             ))}
+            <li><a href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/certifications`} className={link}>Certifications</a></li>
           </ul>
         </div>
         <div>
@@ -40,7 +41,7 @@ export function Footer() {
         <div>
           <h4 className="mb-3 text-base font-bold">Contact Info</h4>
           <ul className="grid gap-2">
-            <li className="flex items-center gap-2 text-sm text-white/70"><MapPin className="size-4" /> Burrilanka, 533126, AP</li>
+            <li className="flex items-center gap-2 text-sm text-white/70"><MapPin className="size-4" /> Laxmapoor, Ramayampet, Medak, Telangana 502115</li>
             <li className="flex items-center gap-2"><Phone className="size-4 text-white/70" /><a href={`tel:${PHONE}`} className={link}>{PHONE}</a></li>
             <li className="flex items-center gap-2"><WhatsAppIcon className="size-4 text-white/70" /><a href={waLink()} target="_blank" rel="noreferrer" className={link}>WhatsApp Us</a></li>
             <li className="flex items-center gap-2"><InstagramIcon className="size-4 text-white/70" /><a href={INSTAGRAM} target="_blank" rel="noreferrer" className={link}>Instagram</a></li>
@@ -51,7 +52,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4 text-sm text-white/60 md:flex-row md:justify-between md:px-8">
           <span>© 2026 Harsha Sai Nursery. All Rights Reserved.</span>
-          <span>Premium Plant Nursery — Burrilanka, AP</span>
+          <span>Premium Plant Nursery — Ramayampet, Telangana</span>
         </div>
       </div>
     </footer>

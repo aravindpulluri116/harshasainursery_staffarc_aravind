@@ -8,9 +8,7 @@ import { HoverIcon } from "@/components/hover-icon";
 import { useLenis } from "@/components/providers";
 
 const HIGHLIGHTS = [
-  "Trusted Nursery — Years of Excellence",
   "Specialization in Premium Fruit Plants",
-  "Imported Varieties — Thailand, Japan, Vietnam",
   "Bulk Orders & Wholesale Available",
 ];
 
@@ -37,10 +35,10 @@ export function About() {
           </span>
           <h2 className="text-lg">Harsha Sai Nursery</h2>
           <p className="mt-5 text-base text-white/75">
-            We are a trusted, premium-quality plant nursery located in Laxmapoor village, Ramayampet Mandal, Medak District, Telangana. With years of dedication, we have cultivated an exceptional collection of fruit plants, specializing in imported and exotic varieties.
+            We are a trusted, premium-quality plant nursery located in Laxmapoor village, Ramayampet Mandal, Medak District, Telangana. We grow a wide collection of fruit plants - coconut, mango, jackfruit, sapota, guava, custard apple and lemon.
           </p>
           <p className="mt-3 text-base text-white/75">
-            Our nursery is known for bringing rare and high-yield plant varieties from countries like Thailand, Japan, Vietnam, Brazil, and beyond — giving our customers access to the finest plants available.
+            We supply plants at wholesale prices, with bulk orders welcome for farms, gardens and landscaping projects.
           </p>
           <ol className="mt-7 divide-y divide-white/15 border-y border-white/15">
             {HIGHLIGHTS.map((text, i) => (

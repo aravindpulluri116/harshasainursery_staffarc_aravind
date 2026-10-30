@@ -22,7 +22,7 @@ const schema = Yup.object({
 const INFO = [
   { icon: Phone, label: "Phone", value: PHONE, href: `tel:${PHONE}`, variant: "wiggle" },
   { icon: WhatsAppIcon, label: "WhatsApp", value: PHONE, href: waLink(), variant: "wiggle" },
-  { icon: MapPin, label: "Location", value: "Burrilanka, AP 533126", variant: "bounce" },
+  { icon: MapPin, label: "Location", value: "Laxmapoor, Ramayampet, Medak, Telangana 502115", variant: "bounce" },
   { icon: Clock, label: "Hours", value: HOURS, variant: "bounce" },
   { icon: InstagramIcon, label: "Instagram", value: "@harshasainursery", href: INSTAGRAM, variant: "pop" },
   { icon: YouTubeIcon, label: "YouTube", value: "@harshasainursery", href: YOUTUBE, variant: "pop" },
@@ -64,7 +64,7 @@ export function Contact() {
 
           <Reveal from="right" className="rounded-3xl bg-white p-5 shadow-soft md:p-8">
             <h3 className="text-base font-bold text-green-900">Harsha Sai Nursery</h3>
-            <p className="mt-1 text-base text-ink/70">Burrilanka, 533126<br />Andhra Pradesh, India</p>
+            <p className="mt-1 text-base text-ink/70">Laxmapoor (Vil), Ramayampet (Mdl)<br />Medak (Dist), Telangana 502115</p>
             <p className="mt-1 text-sm font-bold text-green-700">{LICENCE}</p>
 
             <ul className="mt-5 grid gap-3">
@@ -101,7 +101,7 @@ export function Contact() {
 
             <div className="mx-auto mt-8 flex max-w-xs flex-col items-center gap-3 rounded-2xl bg-green-50 p-6 shadow-soft">
               <p className="text-base font-bold text-green-900">Harsha Sai Nursery</p>
-              <p className="text-sm text-ink/60">Burrilanka, Andhra Pradesh</p>
+              <p className="text-sm text-ink/60">Laxmapoor, Ramayampet, Medak, Telangana</p>
             </div>
           </Reveal>
         </div>
@@ -112,4 +112,4 @@ export function Contact() {
       </div>
     </section>
   );
-}
+                  }

@@ -5,12 +5,14 @@ import * as Yup from "yup";
 import { toast } from "sonner";
 import { Clock, MapPin, Phone, Send } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
+import { InstagramIcon } from "@/components/icons/instagram";
+import { YouTubeIcon } from "@/components/icons/youtube";
 import { Button } from "@/components/ui/button";
 import { Input, Textarea } from "@/components/ui/input";
 import { SectionHeader } from "@/components/section-header";
 import { Reveal } from "@/components/reveal";
 import { HoverIcon } from "@/components/hover-icon";
-import { HOURS, LICENCE, MAP_EMBED, PHONE, waLink } from "@/lib/site";
+import { HOURS, INSTAGRAM, LICENCE, MAP_EMBED, PHONE, YOUTUBE, waLink } from "@/lib/site";
 
 const schema = Yup.object({
   name: Yup.string().trim().min(2, "Please enter your name").required("Name is required"),
@@ -22,6 +24,8 @@ const INFO = [
   { icon: WhatsAppIcon, label: "WhatsApp", value: PHONE, href: waLink(), variant: "wiggle" },
   { icon: MapPin, label: "Location", value: "Burrilanka, AP 533126", variant: "bounce" },
   { icon: Clock, label: "Hours", value: HOURS, variant: "bounce" },
+  { icon: InstagramIcon, label: "Instagram", value: "@harshasainursery", href: INSTAGRAM, variant: "pop" },
+  { icon: YouTubeIcon, label: "YouTube", value: "@harshasainursery", href: YOUTUBE, variant: "pop" },
 ];
 
 export function Contact() {

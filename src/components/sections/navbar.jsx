@@ -1,4 +1,6 @@
 "use client";
+import { nurseryLogoTransparent } from "@/assets/catalogue-images-7";
+
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -13,6 +15,9 @@ import { useLenis } from "@/components/providers";
 import { useCart } from "@/lib/cart";
 import { NAV_LINKS, PHONE, waLink } from "@/lib/site";
 import { cn } from "@/lib/utils";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const homeHref = (hash) => `${BASE}/${hash}`;
 
 export function Navbar() {
   const lenis = useLenis();
@@ -47,8 +52,12 @@ export function Navbar() {
   }, [open, lenis]);
 
   const go = (e, href) => {
-    e.preventDefault();
     setOpen(false);
+    // On the homepage, smooth-scroll to the section. From other pages
+    // (/certifications, /cart, /checkout, /plants/...), follow the real URL.
+    const path = window.location.pathname.replace(/\/+$/, "");
+    if (path !== BASE) return;
+    e.preventDefault();
     if (lenis) lenis.scrollTo(href, { offset: -72 });
     else document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -66,14 +75,14 @@ export function Navbar() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-[72px] md:px-8">
         <motion.a
-          href="#home"
+          href={homeHref("#home")}
           onClick={(e) => go(e, "#home")}
           className="flex items-center gap-2"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 15 }}
         >
-          <Image src="/assets/nursery-logo.svg" alt="Harsha Sai Nursery" width={200} height={110} className="h-12 w-auto shrink-0 object-contain md:h-14" />
+          <Image src={nurseryLogoTransparent} alt="Harsha Sai Nursery" width={200} height={130} className="h-12 w-auto shrink-0 object-contain md:h-14" />
         </motion.a>
 
         {/* Large: inline nav */}
@@ -81,7 +90,7 @@ export function Navbar() {
           {NAV_LINKS.map((l) => (
             <motion.a
               key={l.href}
-              href={l.href}
+              href={homeHref(l.href)}
               onClick={(e) => go(e, l.href)}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.94 }}
@@ -180,7 +189,7 @@ export function Navbar() {
         {NAV_LINKS.map((l, i) => (
           <motion.a
             key={l.href}
-            href={l.href}
+            href={homeHref(l.href)}
             onClick={(e) => go(e, l.href)}
             animate={open ? { x: 0, opacity: 1 } : { x: 40, opacity: 0 }}
             transition={{ type: "spring", stiffness: 220, damping: 20, delay: open ? 0.08 + i * 0.06 : 0 }}

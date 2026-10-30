@@ -8,11 +8,12 @@ import { Button } from "@/components/ui/button";
 import { HoverIcon } from "@/components/hover-icon";
 import { useLenis } from "@/components/providers";
 import { PHONE, waLink } from "@/lib/site";
+import { plants } from "@/data/plants";
 
 const FACTS = [
-  ["103+", "exotic fruit plant varieties"],
-  ["Imported", "from Thailand, Japan, Vietnam, Brazil & beyond"],
-  ["Bulk", "orders and wholesale available"],
+  [`${plants.length}+`, "fruit plant varieties"],
+  ["Wholesale", "prices on every plant"],
+  ["Bulk", "orders available"],
 ];
 
 export function Hero() {
@@ -48,7 +49,7 @@ export function Hero() {
             transition={{ delay: 0.18 }}
             className="mt-5 max-w-lg text-base text-ink/70 md:text-[1.125rem]"
           >
-            Specializing in 103+ exotic fruit plant varieties — imported from Thailand, Japan, Brazil &amp; beyond
+            Coconut, mango, jackfruit, sapota, guava, custard apple &amp; lemon plants at wholesale prices
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 16 }}

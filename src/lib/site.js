@@ -1,6 +1,10 @@
 export const PHONE = "9949492854";
 export const WHATSAPP = "918143941125"; // Harsha Sai Nursery WhatsApp
 
+// Social profiles
+export const INSTAGRAM = "https://www.instagram.com/harshasainursery";
+export const YOUTUBE = "https://youtube.com/@harshasainursery";
+
 export const HOURS = "9 AM – 6:30 PM, Every Day";
 export const LICENCE = "Telangana Government Horticulture Licenced & Approved Nursery";
 

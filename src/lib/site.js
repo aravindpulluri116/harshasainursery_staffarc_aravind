@@ -1,4 +1,4 @@
-export const PHONE = "9949492854";
+export const PHONE = "8143941125";
 export const WHATSAPP = "918143941125"; // Harsha Sai Nursery WhatsApp
 
 // Social profiles
@@ -45,4 +45,3 @@ export const FILTERS = [
 
 // Indices (1-based) into the plants list shown in the gallery
 export const GALLERY_IDS = [4, 8, 17, 12, 6, 11, 3, 15, 9, 19, 5, 2];
-

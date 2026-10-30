@@ -98,8 +98,17 @@ export function Plants() {
         {list.length === 0 ? (
           <div className="pop-in py-16 text-center">
             <Sprout className="mx-auto mb-3 size-12 text-green-600/50" />
-            <h3 className="text-base font-bold">No plants found.</h3>
-            <p className="text-base text-ink/60">Try another plant name.</p>
+            {plants.length === 0 ? (
+              <>
+                <h3 className="text-base font-bold">New catalogue coming soon.</h3>
+                <p className="text-base text-ink/60">We&apos;re adding our real plant varieties.</p>
+              </>
+            ) : (
+              <>
+                <h3 className="text-base font-bold">No plants found.</h3>
+                <p className="text-base text-ink/60">Try another plant name.</p>
+              </>
+            )}
           </div>
         ) : (
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
@@ -133,5 +142,4 @@ export function Plants() {
     </section>
   );
 }
-
 

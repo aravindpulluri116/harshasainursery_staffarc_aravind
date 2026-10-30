@@ -1,3 +1,5 @@
+import { plants } from "@/data/plants";
+
 export const PHONE = "8143941125";
 export const WHATSAPP = "918143941125"; // Harsha Sai Nursery WhatsApp
 
@@ -24,7 +26,7 @@ export const NAV_LINKS = [
 ];
 
 export const CATEGORIES = [
-  { name: "Fruit Plants", note: "Premium Varieties", image: "/assets/fruit.webp", count: 103 },
+  { name: "Fruit Plants", note: "Premium Varieties", image: "/assets/fruit.webp", count: plants.length },
   { name: "Indoor Plants", note: "Beautiful Collection", image: "/assets/indoor.webp" },
   { name: "Outdoor Plants", note: "Garden Essentials", image: "/assets/outdoor.webp" },
   { name: "Ornamental Plants", note: "Decorative Beauties", image: "/assets/ornamental.webp" },
@@ -38,10 +40,11 @@ export const TAGS = {
 
 export const FILTERS = [
   { key: "all", label: "All Plants" },
-  { key: "imported", label: "Imported" },
-  { key: "exotic", label: "Exotic" },
-  { key: "bestseller", label: "Best Sellers" },
+  { key: "Coconut", label: "Coconut" },
+  { key: "Mango", label: "Mango" },
+  { key: "Jackfruit", label: "Jackfruit" },
+  { key: "Sapota", label: "Sapota" },
+  { key: "Guava", label: "Guava" },
+  { key: "Custard Apple", label: "Custard Apple" },
+  { key: "Lemon", label: "Lemon" },
 ];
-
-// Indices (1-based) into the plants list shown in the gallery
-export const GALLERY_IDS = [4, 8, 17, 12, 6, 11, 3, 15, 9, 19, 5, 2];

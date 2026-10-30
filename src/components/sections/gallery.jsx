@@ -9,13 +9,15 @@ import { SectionHeader } from "@/components/section-header";
 import { plants } from "@/data/plants";
 import { GALLERY_IDS } from "@/lib/site";
 
-const items = GALLERY_IDS.map((id) => plants[id - 1] ?? plants[0]);
+const items = GALLERY_IDS.map((id) => plants[id - 1]).filter(Boolean);
 
 export function Gallery() {
   const [index, setIndex] = useState(null);
   const touchX = useRef(0);
   const item = index === null ? null : items[index];
   const step = (d) => setIndex((i) => (i + d + items.length) % items.length);
+
+  if (items.length === 0) return null;
 
   return (
     <section id="gallery" className="bg-beige-100 py-14 md:py-20 lg:py-24">

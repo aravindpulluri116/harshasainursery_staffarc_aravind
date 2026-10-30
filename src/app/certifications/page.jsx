@@ -11,17 +11,6 @@ export const metadata = {
   description: "Horticulture nursery licence held by Harsha Sai Nursery, issued under the Telangana Registration of Horticulture Nurseries (Regulation) Act, 2010.",
 };
 
-const DETAILS = [
-  ["Licence No.", "03/TG-HNA/MDK/2024"],
-  ["Nursery", "Harsha Sai Nursery"],
-  ["Licence holder", "Sri Dodla Venkatesh"],
-  ["Issued by", "District Horticulture & Sericulture Officer, Medak"],
-  ["Date of issue", "22 August 2025"],
-  ["Valid", "22 August 2025 to 21 August 2027"],
-  ["Nursery extent", "0.5 hectare"],
-  ["Authorised for", "Raising, exhibiting for sale and selling fruit plants (Fruit Crops, all varieties)"],
-];
-
 export default function CertificationsPage() {
   return (
     <>
@@ -45,22 +34,12 @@ export default function CertificationsPage() {
             </p>
           </div>
 
-          <dl className="mt-6 divide-y divide-ink/10 rounded-[28px] bg-white p-2 shadow-soft md:p-4">
-            {DETAILS.map(([k, v]) => (
-              <div key={k} className="grid gap-1 px-4 py-3.5 sm:grid-cols-[170px_1fr] sm:gap-4">
-                <dt className="text-sm font-bold text-ink/60">{k}</dt>
-                <dd className="text-base font-bold text-ink">{v}</dd>
-              </div>
-            ))}
-          </dl>
-
+          
           <div className="mb-6">
               <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-emerald-800">Original licence certificate</p>
               <img src={licenceCertificate} alt="Horticulture nursery licence certificate issued to Harsha Sai Nursery" className="w-full max-w-2xl rounded-lg border border-emerald-200 shadow-sm" />
             </div>
-            <p className="mt-5 text-sm text-ink/60">
-            Details are taken from the licence issued by the District Horticulture &amp; Sericulture Officer, Medak. Want to see the original licence? Ask us on WhatsApp.
-          </p>
+            
 
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild size="lg" variant="whatsapp">

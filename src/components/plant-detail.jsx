@@ -72,7 +72,6 @@ export function PlantDetail({ plant }) {
             <Link href="/#plants" aria-label="Back to plants" className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-ink shadow-soft transition hover:bg-green-50">
               <ArrowLeft className="size-5" />
             </Link>
-            <h1 className="truncate text-lg font-bold">{plant.name}</h1>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 md:gap-10">
@@ -103,7 +102,7 @@ export function PlantDetail({ plant }) {
               className="flex flex-col gap-4"
             >
               <div>
-                <h2 className="text-lg font-bold text-green-900">{plant.name}</h2>
+                <h1 className="text-lg font-bold text-green-900">{plant.name}</h1>
                 <p className="text-sm text-ink/60">{plant.group}</p>
               </div>
               <dl className="divide-y divide-green-100 rounded-2xl bg-white px-4 text-sm shadow-soft">

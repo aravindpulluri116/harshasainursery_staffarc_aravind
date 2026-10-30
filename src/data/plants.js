@@ -5,6 +5,7 @@ import { custardAppleHand, custardApplePile, laxmanphalFruit, mangoFruit } from 
 import { guavaFruit, lemonCluster } from "../assets/catalogue-images-5";
 import { lemonPlant } from "../assets/catalogue-images-6";
 import { lemonSaplings } from "../assets/catalogue-images-7";
+import { malaysianOrangeDwarfCoconut, chandaShankaraHybridCoconut } from "../assets/catalogue-images-9";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -15,8 +16,8 @@ export const plants = [
   { id: 1, name: "Malaysian Green Dwarf Coconut", group: "Coconut", wholesale: 450, image: malaysianGreenDwarfCoconut },
   { id: 2, name: "Ganga Bavani / Ganga Bondam Hybrid Dwarf Coconut", group: "Coconut", wholesale: 600, image: gangaBondamDwarfCoconut },
   { id: 3, name: "Malaysian Yellow Dwarf Coconut", group: "Coconut", wholesale: 450, image: coconutYellowFruit, representative: true },
-  { id: 4, name: "Malaysian Orange Dwarf Coconut", group: "Coconut", wholesale: 450, image: null },
-  { id: 5, name: "Chanda Shankara Hybrid Coconut", group: "Coconut", wholesale: 550, image: null },
+  { id: 4, name: "Malaysian Orange Dwarf Coconut", group: "Coconut", wholesale: 450, image: malaysianOrangeDwarfCoconut },
+  { id: 5, name: "Chanda Shankara Hybrid Coconut", group: "Coconut", wholesale: 550, image: chandaShankaraHybridCoconut },
   { id: 6, name: "Chowgard Orange Dwarf Coconut", group: "Coconut", wholesale: 450, image: null },
   { id: 7, name: "Chowgard Green Dwarf Coconut", group: "Coconut", wholesale: 450, image: coconutGreenFruit, representative: true },
   { id: 8, name: "Chowgard Yellow Dwarf Coconut", group: "Coconut", wholesale: 450, image: null },

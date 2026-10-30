@@ -7,9 +7,7 @@ import { motion } from "motion/react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { SectionHeader } from "@/components/section-header";
 import { plants } from "@/data/plants";
-import { GALLERY_IDS } from "@/lib/site";
-
-const items = GALLERY_IDS.map((id) => plants[id - 1]).filter(Boolean);
+const items = plants.filter((p) => p.image).slice(0, 12);
 
 export function Gallery() {
   const [index, setIndex] = useState(null);

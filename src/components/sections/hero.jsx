@@ -32,7 +32,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-5 inline-flex items-center gap-2 text-sm font-bold tracking-widest text-green-600 uppercase"
           >
-            <Leaf className="size-4" /> Est. Burrilanka, Andhra Pradesh
+            <Leaf className="size-4" /> Ramayampet, Medak, Telangana
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}

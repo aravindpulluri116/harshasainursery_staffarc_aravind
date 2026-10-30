@@ -52,7 +52,7 @@ export function PlantDetail({ plant }) {
   const next = plants[(idx + 1) % plants.length];
 
   const addToCart = () => {
-    add({ id: plant.id, name: plant.name, image: plant.image, type: plant.type, wholesale: plant.wholesale ?? null });
+    add({ id: plant.id, name: plant.name, image: plant.image, type: plant.group, wholesale: plant.wholesale ?? null });
     setAdded(true);
     setPulse((n) => n + 1);
     clearTimeout(timer.current);
@@ -87,6 +87,11 @@ export function PlantDetail({ plant }) {
                   {TAGS[plant.tag]}
                 </span>
               )}
+              {plant.representative && (
+                <span className="absolute top-3 right-3 z-10 rounded-full bg-black/55 px-2.5 py-1 text-xs font-bold text-white">
+                  Representative image
+                </span>
+              )}
               <PlantImage plant={plant} priority sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
             </motion.div>
 
@@ -99,17 +104,17 @@ export function PlantDetail({ plant }) {
             >
               <div>
                 <h2 className="text-lg font-bold text-green-900">{plant.name}</h2>
-                <p className="text-sm text-ink/60">{plant.type} • {plant.origin}</p>
+                <p className="text-sm text-ink/60">{plant.group}</p>
               </div>
               <dl className="divide-y divide-green-100 rounded-2xl bg-white px-4 text-sm shadow-soft">
-                {[["Category", "Fruit Plant"], ["Type", plant.type], ["Origin", plant.origin], ...(plant.wholesale ? [["Price", `₹${plant.wholesale}/-`]] : [])].map(([k, v]) => (
+                {[["Group", plant.group], ...(plant.wholesale ? [["Price", `₹${plant.wholesale}/-`]] : [])].map(([k, v]) => (
                   <div key={k} className="flex justify-between gap-4 py-3">
                     <dt className="text-ink/60">{k}</dt>
                     <dd className="text-right font-bold">{v}</dd>
                   </div>
                 ))}
               </dl>
-              <p className="text-base text-ink/75">{plant.desc}</p>
+              {plant.desc && <p className="text-base text-ink/75">{plant.desc}</p>}
               <div className="mt-auto grid gap-2 pt-2">
                 <motion.div key={pulse} initial={{ scale: 1 }} animate={pulse ? { scale: [1, 1.06, 0.97, 1] } : { scale: 1 }} transition={{ duration: 0.45 }}>
                   <Button onClick={addToCart} size="lg" className={cn("w-full overflow-hidden transition-colors duration-300", added && "bg-green-700 text-white hover:bg-green-700")}>
@@ -149,4 +154,3 @@ export function PlantDetail({ plant }) {
     </>
   );
 }
-

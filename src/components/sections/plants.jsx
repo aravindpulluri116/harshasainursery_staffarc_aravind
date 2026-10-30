@@ -39,7 +39,7 @@ export function Plants() {
   const [query, setQuery] = useState("");
 
   const addToCart = useCallback((p) => {
-    add({ id: p.id, name: p.name, image: p.image, type: p.type, wholesale: p.wholesale ?? null });
+    add({ id: p.id, name: p.name, image: p.image, type: p.group, wholesale: p.wholesale ?? null });
     toast.success(`${p.name} added to cart — view cart to order`, {
       action: { label: "View Cart", onClick: () => router.push("/cart") },
     });
@@ -47,7 +47,7 @@ export function Plants() {
 
   const list = useMemo(() => {
     const q = query.trim().toLowerCase();
-    let out = plants.filter((p) => (filter === "all" || p.tag === filter) && (!q || p.name.toLowerCase().includes(q)));
+    let out = plants.filter((p) => (filter === "all" || p.group === filter) && (!q || p.name.toLowerCase().includes(q) || p.group.toLowerCase().includes(q)));
     if (filter === "all") out = [...out].sort((a, b) => a.name.localeCompare(b.name));
     return out;
   }, [filter, query]);
@@ -64,7 +64,7 @@ export function Plants() {
           <h2 className="text-lg">
             <SplitText text="Our Plant Collections" />
           </h2>
-          <p className="max-w-sm text-base text-ink/65">203+ premium fruit plant varieties — hand-picked for quality</p>
+          <p className="max-w-sm text-base text-ink/65">{`${plants.length} varieties, real plants, real wholesale prices`}</p>
         </div>
       </div>
 
@@ -126,10 +126,15 @@ export function Plants() {
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
                   {p.tag && <PlantTag tag={p.tag} />}
+                  {p.representative && (
+                    <span className="absolute top-2 right-2 z-10 rounded-full bg-black/55 px-2 py-0.5 text-[10px] font-bold text-white">
+                      Representative image
+                    </span>
+                  )}
                   <PlantImage plant={p} loading="lazy" sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-green-950/90 via-green-950/55 to-transparent p-3 pt-14 text-white md:p-4 md:pt-16">
                     <h3 className="truncate text-base">{p.name}</h3>
-                    <p className="truncate text-sm text-white/75">{p.type} • {p.origin}</p>
+                    <p className="truncate text-sm text-white/75">{p.group}</p>
                     {p.wholesale && <p className="text-sm font-bold text-lime">₹{p.wholesale}/-</p>}
                   </div>
                 </div>
@@ -142,4 +147,3 @@ export function Plants() {
     </section>
   );
 }
-

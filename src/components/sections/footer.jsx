@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { MapPin, Phone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
-import { NAV_LINKS, PHONE, waLink } from "@/lib/site";
+import { InstagramIcon } from "@/components/icons/instagram";
+import { YouTubeIcon } from "@/components/icons/youtube";
+import { INSTAGRAM, NAV_LINKS, PHONE, YOUTUBE, waLink } from "@/lib/site";
 
 const CATS = ["Fruit Plants", "Indoor Plants", "Outdoor Plants", "Ornamental Plants"];
 const link = "text-sm text-white/70 transition-colors hover:text-lime";
@@ -41,6 +43,8 @@ export function Footer() {
             <li className="flex items-center gap-2 text-sm text-white/70"><MapPin className="size-4" /> Burrilanka, 533126, AP</li>
             <li className="flex items-center gap-2"><Phone className="size-4 text-white/70" /><a href={`tel:${PHONE}`} className={link}>{PHONE}</a></li>
             <li className="flex items-center gap-2"><WhatsAppIcon className="size-4 text-white/70" /><a href={waLink()} target="_blank" rel="noreferrer" className={link}>WhatsApp Us</a></li>
+            <li className="flex items-center gap-2"><InstagramIcon className="size-4 text-white/70" /><a href={INSTAGRAM} target="_blank" rel="noreferrer" className={link}>Instagram</a></li>
+            <li className="flex items-center gap-2"><YouTubeIcon className="size-4 text-white/70" /><a href={YOUTUBE} target="_blank" rel="noreferrer" className={link}>YouTube</a></li>
           </ul>
         </div>
       </div>

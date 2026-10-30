@@ -37,7 +37,7 @@ export function About() {
           </span>
           <h2 className="text-lg">Harsha Sai Nursery</h2>
           <p className="mt-5 text-base text-white/75">
-            We are a trusted, premium-quality plant nursery located in the heart of Burrilanka, Andhra Pradesh. With years of dedication, we have cultivated an exceptional collection of fruit plants, specializing in imported and exotic varieties.
+            We are a trusted, premium-quality plant nursery located in Laxmapoor village, Ramayampet Mandal, Medak District, Telangana. With years of dedication, we have cultivated an exceptional collection of fruit plants, specializing in imported and exotic varieties.
           </p>
           <p className="mt-3 text-base text-white/75">
             Our nursery is known for bringing rare and high-yield plant varieties from countries like Thailand, Japan, Vietnam, Brazil, and beyond — giving our customers access to the finest plants available.

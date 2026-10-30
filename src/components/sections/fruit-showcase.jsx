@@ -7,6 +7,8 @@ import { plants } from "@/data/plants";
 const showcase = plants.slice(0, 20);
 
 export function FruitShowcase() {
+  if (showcase.length === 0) return null;
+
   return (
     <section className="bg-white py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">

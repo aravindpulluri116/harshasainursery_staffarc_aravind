@@ -6,7 +6,7 @@ import { nurseryLogoTransparent } from "@/assets/catalogue-images-7";
 
 // Opening loading animation: a ring draws itself around the nursery logo,
 // the logo blooms in, the name rises letter by letter, the strapline
-// follows, a short hold, then the whole loader lifts away like a curtain to
+// follows, a short hold, then the whole loader fades out to
 // reveal the page. Always finishes (hard cap) and respects reduced motion.
 const S = 1; // timing scale; keep 1 (used only by the local preview capture)
 
@@ -53,13 +53,12 @@ export function Loader() {
       role="status"
       aria-label="Loading"
       className={`hsn-loader fixed inset-0 z-[100] grid place-items-center bg-beige-50 ${
-        hiding ? "pointer-events-none -translate-y-full" : ""
+        hiding ? "pointer-events-none opacity-0" : ""
       }`}
     >
       <style>{`
-        .hsn-loader { transition: transform ${0.65 * S}s cubic-bezier(0.76, 0, 0.24, 1); }
-        .hsn-inner { transition: opacity ${0.4 * S}s ease, transform ${0.65 * S}s cubic-bezier(0.76, 0, 0.24, 1); }
-        .hsn-inner.hsn-out { opacity: 0; transform: scale(0.94); }
+        .hsn-loader { transition: opacity ${0.65 * S}s ease-in-out; }
+        
         @keyframes hsn-ring { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
         @keyframes hsn-bloom { 0% { opacity: 0; transform: scale(0.6); } 60% { opacity: 1; transform: scale(1.07); } 100% { opacity: 1; transform: scale(1); } }
         @keyframes hsn-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
@@ -68,7 +67,7 @@ export function Loader() {
           .hsn-loader * { animation-duration: 0.01s !important; animation-delay: 0s !important; }
         }
       `}</style>
-      <div className={`hsn-inner flex flex-col items-center gap-4 px-6 text-center ${hiding ? "hsn-out" : ""}`}>
+      <div className="hsn-inner flex flex-col items-center gap-4 px-6 text-center">
         <div className="relative grid h-[190px] w-[240px] place-items-center">
           <svg viewBox="0 0 240 190" className="absolute inset-0 h-full w-full" aria-hidden="true">
             <ellipse

@@ -1,5 +1,6 @@
 import { Inter, Fraunces } from "next/font/google";
 import { Providers } from "@/components/providers";
+import { Loader } from "@/components/loader";
 import "./globals.css";
 
 // Single typeface, two weights only.
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${fraunces.variable}`}>
       <body>
+        <Loader />
         <Providers>{children}</Providers>
       </body>
     </html>

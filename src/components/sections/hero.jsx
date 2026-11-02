@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Phone, Leaf } from "lucide-react";
+import { Phone, Leaf, BadgeCheck } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { HoverIcon } from "@/components/hover-icon";
@@ -15,6 +15,8 @@ const FACTS = [
   ["Wholesale", "prices on every plant"],
   ["Bulk", "orders available"],
 ];
+
+const BULLETS = ["All exotic fruit plants", "Vegetable saplings"];
 
 export function Hero() {
   const lenis = useLenis();
@@ -41,8 +43,16 @@ export function Hero() {
             transition={{ delay: 0.08, type: "spring", stiffness: 90, damping: 18 }}
             className="text-[clamp(2.75rem,1.4rem+6vw,5.5rem)] leading-[0.98] text-ink"
           >
-            Premium Quality <span className="italic text-green-600">Nursery Plants</span>
+            Harsha Sai Nursery <span className="italic text-green-600">with Landscaping</span>
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.14 }}
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-green-900 px-4 py-2 text-base font-bold text-lime md:text-[1.125rem]"
+          >
+            <BadgeCheck className="size-5 shrink-0" /> Government Approved Horticulture Licensed Nursery
+          </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,6 +61,18 @@ export function Hero() {
           >
             Coconut, mango, jackfruit, sapota, guava, custard apple &amp; lemon plants at wholesale prices
           </motion.p>
+          <motion.ul
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.22 }}
+            className="mt-4 grid gap-2"
+          >
+            {BULLETS.map((b) => (
+              <li key={b} className="flex items-center gap-2 text-base font-bold text-ink">
+                <span className="size-2 shrink-0 rounded-full bg-green-600" /> {b}
+              </li>
+            ))}
+          </motion.ul>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

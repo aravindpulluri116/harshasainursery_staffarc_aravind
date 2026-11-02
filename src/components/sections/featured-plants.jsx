@@ -29,11 +29,11 @@ export function FeaturedPlants() {
     <section id="plants" className="bg-beige-50">
       <div className="mx-auto max-w-7xl px-4 pt-14 pb-2 md:px-8 md:pt-20">
         <span className="mb-3 inline-flex items-center gap-2 text-sm font-bold tracking-widest text-green-600 uppercase">
-          <Sprout className="size-4" /> Featured
+          <Sprout className="size-4" /> Our Plants
         </span>
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <h2 className="text-lg">
-            <SplitText text="Featured Plants" />
+            <SplitText text="Our Products" />
           </h2>
           <p className="max-w-sm text-base text-ink/65">{`A few varieties to start with - the full catalogue has all ${plants.length} plants.`}</p>
         </div>

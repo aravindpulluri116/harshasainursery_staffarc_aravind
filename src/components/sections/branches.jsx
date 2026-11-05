@@ -2,8 +2,8 @@ import { MapPin } from "lucide-react";
 
 const BRANCHES = [
   { label: "Main Branch", place: "Lakshmapur village, Medak district, Telangana" },
-  { label: "Second Branch", place: "Rajahmundry, Veeravaram" },
-  { label: "Third Branch", place: "Dharmapuri, Tamil Nadu" },
+  { label: "Second Branch", place: "Dharmapuri, Tamil Nadu" },
+  { label: "Third Branch", place: "Rajahmundry, Veeravaram" },
 ];
 
 export function Branches() {

@@ -18,8 +18,14 @@ const TAG_STYLE = {
 };
 
 // A few plants for the homepage, using the tags already in the catalogue data.
-const featured = [...plants]
-  .sort((a, b) => (b.tag === "bestseller") - (a.tag === "bestseller") || a.name.localeCompare(b.name))
+// Coconut first, Malaysian varieties at the front, then catalogue order.
+// Chowgard Orange (6) and Chowgard Green (7) are left out of the homepage picks: their photos are
+// man-centred, and replacements are pending from the owner. They stay in the full catalogue.
+const HOME_SKIP = new Set([6, 7]);
+const rank = (p) => (p.group === "Coconut" ? (p.name.startsWith("Malaysian") ? 0 : 1) : 2);
+const featured = plants
+  .filter((p) => !HOME_SKIP.has(p.id))
+  .sort((a, b) => rank(a) - rank(b) || a.id - b.id)
   .slice(0, 6);
 
 export function FeaturedPlants() {

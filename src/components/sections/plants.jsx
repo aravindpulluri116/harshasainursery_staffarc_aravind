@@ -64,7 +64,7 @@ export function Plants() {
           <h2 className="text-lg">
             <SplitText text="Our Plant Collections" />
           </h2>
-          <p className="max-w-sm text-base text-ink/65">{`${plants.length} varieties, real plants, real wholesale prices`}</p>
+          <p className="max-w-sm text-base text-ink/65">{"Real plants, real wholesale prices"}</p>
         </div>
       </div>
 

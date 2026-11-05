@@ -11,7 +11,7 @@ import { PHONE, waLink } from "@/lib/site";
 import { plants } from "@/data/plants";
 
 const FACTS = [
-  [`${plants.length}+`, "fruit plant varieties"],
+  ["150+", "fruit plant varieties available"],
   ["Wholesale", "prices on every plant"],
   ["Bulk", "orders available"],
 ];

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { Phone, Leaf, BadgeCheck } from "lucide-react";
+import { Phone, BadgeCheck } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons/whatsapp";
 import { Button } from "@/components/ui/button";
 import { HoverIcon } from "@/components/hover-icon";
@@ -30,20 +30,14 @@ export function Hero() {
     <section id="home" className="relative overflow-hidden bg-beige-50 pt-24 pb-10 md:pt-32 md:pb-16">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         <div>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-5 inline-flex items-center gap-2 text-sm font-bold tracking-widest text-green-600 uppercase"
-          >
-            <Leaf className="size-4" /> Ramayampet, Medak, Telangana
-          </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08, type: "spring", stiffness: 90, damping: 18 }}
-            className="text-[clamp(2.75rem,1.4rem+6vw,5.5rem)] leading-[0.98] text-ink"
+            className="text-[clamp(3rem,1.6rem+7vw,6.25rem)] leading-[0.98] text-ink"
           >
-            Harsha Sai Nursery <span className="italic text-green-600">with Landscaping</span>
+            Harsha Sai Nursery
+            <span className="mt-3 block font-sans text-[clamp(1rem,0.8rem+1.2vw,1.5rem)] leading-tight font-bold tracking-widest text-[#d9731a] uppercase">Landscaping</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -94,11 +88,11 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-ink/15 pt-6">
+          <dl className="mt-10 grid grid-cols-3 gap-x-6 max-[360px]:gap-x-4 gap-y-4 border-t border-ink/15 pt-6">
             {FACTS.map(([n, label]) => (
-              <div key={n}>
-                <dt className="font-display text-[1.5rem] leading-none font-semibold text-ink md:text-4xl">{n}</dt>
-                <dd className="mt-2 text-sm leading-snug text-ink/60">{label}</dd>
+              <div key={n} className="min-w-0">
+                <dt className="font-display text-[1.25rem] max-[360px]:text-[1.05rem] leading-none font-semibold text-ink sm:text-[1.5rem] md:text-4xl">{n}</dt>
+                <dd className="mt-2 text-xs leading-snug sm:text-sm text-ink/60">{label}</dd>
               </div>
             ))}
           </dl>

@@ -41,7 +41,7 @@ export function FeaturedPlants() {
           <h2 className="text-lg">
             <SplitText text="Our Products" />
           </h2>
-          <p className="max-w-sm text-base text-ink/65">{`A few varieties to start with - the full catalogue has all ${plants.length} plants.`}</p>
+          <p className="max-w-sm text-base text-ink/65">{"A few varieties to start with - see the full catalogue for every plant and its wholesale price."}</p>
         </div>
       </div>
 
@@ -84,7 +84,7 @@ export function FeaturedPlants() {
         <div className="mt-8 text-center">
           <Button asChild size="lg" variant="outlineDark">
             <Link href="/plants">
-              View all {plants.length} plants <ArrowRight className="size-4" />
+              View full catalogue <ArrowRight className="size-4" />
             </Link>
           </Button>
         </div>

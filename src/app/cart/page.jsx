@@ -144,6 +144,13 @@ export default function CartPage() {
                   </div>
                 )}
 
+                <p className="mt-2 text-sm text-ink/60">Minimum order ₹5,000</p>
+                {subtotal > 0 && subtotal < 5000 && (
+                  <p className="mt-2 rounded-xl bg-amber-50 px-3 py-2 text-sm font-bold text-amber-700">
+                    Approx total is below the ₹5,000 minimum order
+                  </p>
+                )}
+
                 <p className="mt-3 text-sm text-ink/60">
                   Final price confirmed on WhatsApp after order.
                 </p>

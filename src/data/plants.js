@@ -8,6 +8,9 @@ import { lemonSaplings } from "../assets/catalogue-images-7";
 import { malaysianOrangeDwarfCoconut, chandaShankaraHybridCoconut } from "../assets/catalogue-images-9";
 import { viyathnamJackfruit, yellowJackfruitBulbs, pinkPanasaJackfruit, honeyJackfruit, cricketSapota, bananaSapota, palaSapota, kalapathiSapota, redSapota } from "../assets/catalogue-images-10";
 import { alahabadSafedhaJama, thaiJamaWhite, kgJama, thaiPinkJama, redDaimondGuava, blackJamaGuava, straberryGuavaRed, straberryGuavaYellow } from "../assets/catalogue-images-11";
+import { suvarnaRekhaMango, mallikaMango, himayathMango, kesariMango, daseriMango, banginpalliMango, cherukuRasamMango } from "../assets/catalogue-images-13";
+import { panduriMango, panchadharaKalasaMango, kothapallyKobbariMango, punasaMango } from "../assets/catalogue-images-14";
+import { katimanMango, r2e2Mango } from "../assets/catalogue-images-15";
 import { exoticMangoFruit, ramaphalamFruit, redSeethaphalFruit, nmkGoldSeethaphal, hanumanphalFruit, chowgardOrangeCoconut, chowgardGreenCoconut, chowgardYellowCoconut } from "../assets/catalogue-images-12";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
@@ -27,6 +30,23 @@ export const plants = [
   // Mango
   { id: 9, name: "Indian Mango Varieties", group: "Mango", wholesale: 250, image: mangoFruit, representative: true, desc: "Like Mallika, kesari, Benisha, daseri, Panduri... so so." },
   { id: 10, name: "Exotic Mango Varieties", group: "Mango", wholesale: 650, image: exoticMangoFruit, desc: "Like R2E2 mango, Nam dac my mango, Miyazaki, Banana mango, katiman mango." },
+  // Individual mango varieties (owner WhatsApp 2026-11-07). Names as typed. Indian mango varieties Rs.250; Katiman and R2E2 Rs.700.
+  // representative: true = photo chosen by owner's discretion, exact variety not verified.
+  { id: 40, name: "Suvarna rekha mango", group: "Mango", wholesale: 250, image: suvarnaRekhaMango, representative: true },
+  { id: 41, name: "Mallika", group: "Mango", wholesale: 250, image: mallikaMango, representative: true },
+  { id: 42, name: "Himayath mango", group: "Mango", wholesale: 250, image: himayathMango, representative: true },
+  { id: 43, name: "Kesari", group: "Mango", wholesale: 250, image: kesariMango, representative: true },
+  { id: 44, name: "Peddarasal mango", group: "Mango", wholesale: 250, image: mangoFruit, representative: true },
+  { id: 45, name: "Banginpalli mango", group: "Mango", wholesale: 250, image: banginpalliMango, representative: true },
+  { id: 46, name: "Cheruku rasam", group: "Mango", wholesale: 250, image: cherukuRasamMango, representative: true },
+  { id: 47, name: "Panduri mango", group: "Mango", wholesale: 250, image: panduriMango, representative: true },
+  { id: 48, name: "Daseri mango", group: "Mango", wholesale: 250, image: daseriMango, representative: true },
+  { id: 49, name: "Panchadhara kalasa mango", group: "Mango", wholesale: 250, image: panchadharaKalasaMango, representative: true },
+  { id: 50, name: "Alphanaso mango", group: "Mango", wholesale: 250, image: mangoFruit, representative: true },
+  { id: 51, name: "Kothapally kobbari mango", group: "Mango", wholesale: 250, image: kothapallyKobbariMango },
+  { id: 52, name: "Punasa", group: "Mango", wholesale: 250, image: punasaMango, representative: true },
+  { id: 53, name: "Katiman mango", group: "Mango", wholesale: 700, image: katimanMango, representative: true },
+  { id: 54, name: "R2E2 mango", group: "Mango", wholesale: 700, image: r2e2Mango, representative: true },
   // Jackfruit
   { id: 11, name: "Viyathnam Super Early Jackfruit (Panasa)", group: "Jackfruit", wholesale: 300, image: viyathnamJackfruit },
   { id: 12, name: "Yellow Jackfruit (Normal Panasa)", group: "Jackfruit", wholesale: 250, image: yellowJackfruitBulbs },

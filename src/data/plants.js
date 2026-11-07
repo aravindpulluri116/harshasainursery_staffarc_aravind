@@ -42,6 +42,11 @@ export const plants = [
   { id: 47, name: "Panduri mango", group: "Mango", wholesale: 250, image: panduriMango, representative: true },
   { id: 48, name: "Daseri mango", group: "Mango", wholesale: 250, image: daseriMango, representative: true },
   { id: 49, name: "Panchadhara kalasa mango", group: "Mango", wholesale: 250, image: panchadharaKalasaMango, representative: true },
+  { id: 50, name: "Alphanaso mango", group: "Mango", wholesale: 250, image: mangoFruit, representative: true },
+  { id: 51, name: "Kothapally kobbari mango", group: "Mango", wholesale: 250, image: kothapallyKobbariMango },
+  { id: 52, name: "Punasa", group: "Mango", wholesale: 250, image: punasaMango, representative: true },
+  { id: 53, name: "Katiman mango", group: "Mango", wholesale: 700, image: katimanMango, representative: true },
+  { id: 54, name: "R2E2 mango", group: "Mango", wholesale: 700, image: r2e2Mango, representative: true },
   // Jackfruit
   { id: 11, name: "Viyathnam Super Early Jackfruit (Panasa)", group: "Jackfruit", wholesale: 300, image: viyathnamJackfruit },
   { id: 12, name: "Yellow Jackfruit (Normal Panasa)", group: "Jackfruit", wholesale: 250, image: yellowJackfruitBulbs },

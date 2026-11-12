@@ -48,5 +48,8 @@ export const FILTERS = [
   { key: "Guava", label: "Guava" },
   { key: "Custard Apple", label: "Custard Apple" },
   { key: "Lemon", label: "Lemon" },
+  { key: "Jamun", label: "Jamun" },
+  { key: "Fig", label: "Fig" },
+  { key: "Water Apple", label: "Water Apple" },
 ];
 

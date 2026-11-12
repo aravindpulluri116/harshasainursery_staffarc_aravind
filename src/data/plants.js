@@ -15,6 +15,12 @@ import { exoticMangoFruit, ramaphalamFruit, redSeethaphalFruit, nmkGoldSeethapha
 import { balajiLemon, namDacMyYellowMango, appleMango, namDacMyPurpleMango } from "../assets/catalogue-images-16";
 import { miyazakiMango, bananaMangoRed, pusaArunima } from "../assets/catalogue-images-17";
 import { amrapaliMango, petlorLemon } from "../assets/catalogue-images-18";
+import { westCoastalTallCoconut } from "../assets/catalogue-images-19";
+import { sweetLemon, alphanasoMango } from "../assets/catalogue-images-20";
+import { bagadoliAllaneredu, sirArdhanKatanAllaneredu } from "../assets/catalogue-images-21";
+import { whiteAllaneredu, puneAnjeera } from "../assets/catalogue-images-22";
+import { jamboWaterAppleRedSweet } from "../assets/catalogue-images-23";
+import { tableLemon } from "../assets/catalogue-images-24";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -30,6 +36,8 @@ export const plants = [
   { id: 6, name: "Chowgard Orange Dwarf Coconut", group: "Coconut", wholesale: 450, image: chowgardOrangeCoconut },
   { id: 7, name: "Chowgard Green Dwarf Coconut", group: "Coconut", wholesale: 450, image: chowgardGreenCoconut },
   { id: 8, name: "Chowgard Yellow Dwarf Coconut", group: "Coconut", wholesale: 450, image: chowgardYellowCoconut },
+  // Owner WhatsApp 2026-11-12 15:18 IST: name, price and photo sent together for this item.
+  { id: 64, name: "West coastal tall coconut", group: "Coconut", wholesale: 200, image: westCoastalTallCoconut },
   // Mango
   { id: 9, name: "Indian Mango Varieties", group: "Mango", wholesale: 250, image: mangoFruit, representative: true, desc: "Like Mallika, kesari, Benisha, daseri, Panduri... so so." },
   { id: 10, name: "Exotic Mango Varieties", group: "Mango", wholesale: 650, image: exoticMangoFruit, desc: "Like R2E2 mango, Nam dac my mango, Miyazaki, Banana mango, katiman mango." },
@@ -45,7 +53,8 @@ export const plants = [
   { id: 47, name: "Panduri mango", group: "Mango", wholesale: 250, image: panduriMango, representative: true },
   { id: 48, name: "Daseri mango", group: "Mango", wholesale: 250, image: daseriMango, representative: true },
   { id: 49, name: "Panchadhara kalasa mango", group: "Mango", wholesale: 250, image: panchadharaKalasaMango, representative: true },
-  { id: 50, name: "Alphanaso mango", group: "Mango", wholesale: 250, image: mangoFruit, representative: true },
+  // Real owner photo for this variety received 2026-11-12 15:18 IST ("Alphanaso Mango" / 250), replacing the representative stock image.
+  { id: 50, name: "Alphanaso mango", group: "Mango", wholesale: 250, image: alphanasoMango },
   { id: 51, name: "Kothapally kobbari mango", group: "Mango", wholesale: 250, image: kothapallyKobbariMango },
   { id: 52, name: "Punasa", group: "Mango", wholesale: 250, image: punasaMango, representative: true },
   { id: 53, name: "Katiman mango", group: "Mango", wholesale: 700, image: katimanMango, representative: true },
@@ -97,4 +106,15 @@ export const plants = [
   { id: 62, name: "Petlor selecton--1 lemon", group: "Lemon", wholesale: 250, image: petlorLemon, desc: "Grafted" },
   // Owner WhatsApp 2026-11-12 13:50 IST: name, price and photo sent together for this item.
   { id: 63, name: "Balaji lemon", group: "Lemon", wholesale: 200, image: balajiLemon },
+  // Owner WhatsApp 2026-11-12 15:18 IST batch: name, price and photo sent together per item.
+  { id: 65, name: "Table lemon", group: "Lemon", wholesale: 250, image: tableLemon },
+  { id: 66, name: "Sweet lemon", group: "Lemon", wholesale: 350, image: sweetLemon },
+  // Jamun (Allaneredu) - owner WhatsApp 2026-11-12 batches, names as typed, photos sent in the same batches.
+  { id: 67, name: "Bagadoli Allaneredu", group: "Jamun", wholesale: 250, image: bagadoliAllaneredu },
+  { id: 68, name: "Sir ardhan katan.. Allaneredu..", group: "Jamun", wholesale: 350, image: sirArdhanKatanAllaneredu },
+  { id: 69, name: "White allaneredu", group: "Jamun", wholesale: 400, image: whiteAllaneredu },
+  // Fig (anjeera) - owner WhatsApp 2026-11-12 15:34 IST batch.
+  { id: 70, name: "Pune anjeera", group: "Fig", wholesale: 150, image: puneAnjeera },
+  // Water apple - owner WhatsApp 2026-11-12 15:34 IST batch.
+  { id: 71, name: "Jambo Water apple red sweet", group: "Water Apple", wholesale: 350, image: jamboWaterAppleRedSweet },
 ];

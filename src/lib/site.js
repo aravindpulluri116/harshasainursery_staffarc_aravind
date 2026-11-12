@@ -51,5 +51,6 @@ export const FILTERS = [
   { key: "Jamun", label: "Jamun" },
   { key: "Fig", label: "Fig" },
   { key: "Water Apple", label: "Water Apple" },
+  { key: "Apple", label: "Apple" },
 ];
 

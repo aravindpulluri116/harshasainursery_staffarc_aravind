@@ -21,6 +21,7 @@ import { bagadoliAllaneredu, sirArdhanKatanAllaneredu } from "../assets/catalogu
 import { whiteAllaneredu, puneAnjeera } from "../assets/catalogue-images-22";
 import { jamboWaterAppleRedSweet } from "../assets/catalogue-images-23";
 import { tableLemon } from "../assets/catalogue-images-24";
+import { hrmnApple99 } from "../assets/catalogue-images-25";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -117,4 +118,6 @@ export const plants = [
   { id: 70, name: "Pune anjeera", group: "Fig", wholesale: 150, image: puneAnjeera },
   // Water apple - owner WhatsApp 2026-11-12 15:34 IST batch.
   { id: 71, name: "Jambo Water apple red sweet", group: "Water Apple", wholesale: 350, image: jamboWaterAppleRedSweet },
+  // Apple - owner WhatsApp 2026-11-12 15:53 IST: "HRMN Apple 99" / "Rate.. 750", photo sent in the same batch.
+  { id: 72, name: "HRMN Apple 99", group: "Apple", wholesale: 750, image: hrmnApple99 },
 ];

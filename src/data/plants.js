@@ -12,6 +12,7 @@ import { suvarnaRekhaMango, mallikaMango, himayathMango, kesariMango, daseriMang
 import { panduriMango, panchadharaKalasaMango, kothapallyKobbariMango, punasaMango } from "../assets/catalogue-images-14";
 import { katimanMango, r2e2Mango } from "../assets/catalogue-images-15";
 import { exoticMangoFruit, ramaphalamFruit, redSeethaphalFruit, nmkGoldSeethaphal, hanumanphalFruit, chowgardOrangeCoconut, chowgardGreenCoconut, chowgardYellowCoconut } from "../assets/catalogue-images-12";
+import { balajiLemon, namDacMyYellowMango, appleMango, namDacMyPurpleMango } from "../assets/catalogue-images-16";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -47,6 +48,10 @@ export const plants = [
   { id: 52, name: "Punasa", group: "Mango", wholesale: 250, image: punasaMango, representative: true },
   { id: 53, name: "Katiman mango", group: "Mango", wholesale: 700, image: katimanMango, representative: true },
   { id: 54, name: "R2E2 mango", group: "Mango", wholesale: 700, image: r2e2Mango, representative: true },
+  // Individual mango varieties (owner WhatsApp 2026-11-12 batch, names/prices/photos sent together).
+  { id: 55, name: "Nam dac my yellow mango", group: "Mango", wholesale: 700, image: namDacMyYellowMango },
+  { id: 56, name: "Apple mango", group: "Mango", wholesale: 700, image: appleMango },
+  { id: 57, name: "Nam dac my purple mango", group: "Mango", wholesale: 700, image: namDacMyPurpleMango },
   // Jackfruit
   { id: 11, name: "Viyathnam Super Early Jackfruit (Panasa)", group: "Jackfruit", wholesale: 300, image: viyathnamJackfruit },
   { id: 12, name: "Yellow Jackfruit (Normal Panasa)", group: "Jackfruit", wholesale: 250, image: yellowJackfruitBulbs },
@@ -81,4 +86,6 @@ export const plants = [
   { id: 37, name: "Market Lemon", group: "Lemon", wholesale: 200, image: lemonCluster },
   { id: 38, name: "Thaiwan Lemon", group: "Lemon", wholesale: 200, image: lemonPlant },
   { id: 39, name: "Pakistan Lemon (KP Lemon)", group: "Lemon", wholesale: 250, image: lemonSaplings },
+  // Owner WhatsApp 2026-11-12 13:50 IST: name, price and photo sent together for this item.
+  { id: 63, name: "Balaji lemon", group: "Lemon", wholesale: 200, image: balajiLemon },
 ];

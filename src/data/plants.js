@@ -22,6 +22,12 @@ import { whiteAllaneredu, puneAnjeera } from "../assets/catalogue-images-22";
 import { jamboWaterAppleRedSweet } from "../assets/catalogue-images-23";
 import { tableLemon } from "../assets/catalogue-images-24";
 import { hrmnApple99 } from "../assets/catalogue-images-25";
+import { annaApple } from "../assets/catalogue-images-26";
+import { redBigAmla } from "../assets/catalogue-images-27";
+import { greenAmla, smallUsiri } from "../assets/catalogue-images-28";
+import { mulberryGreenLong, mulberryBlack } from "../assets/catalogue-images-29";
+import { miracleFruit } from "../assets/catalogue-images-30";
+import { dragonFruit } from "../assets/catalogue-images-31";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -120,4 +126,15 @@ export const plants = [
   { id: 71, name: "Jambo Water apple red sweet", group: "Water Apple", wholesale: 350, image: jamboWaterAppleRedSweet },
   // Apple - owner WhatsApp 2026-11-12 15:53 IST: "HRMN Apple 99" / "Rate.. 750", photo sent in the same batch.
   { id: 72, name: "HRMN Apple 99", group: "Apple", wholesale: 750, image: hrmnApple99 },
+  { id: 73, name: "Anna Apple", group: "Apple", wholesale: 750, image: annaApple },
+  // Amla (Indian gooseberry) - owner WhatsApp 2026-11-12 batch, approved 16:24 IST.
+  { id: 74, name: "Red big Amla", group: "Amla", wholesale: 350, image: redBigAmla },
+  { id: 75, name: "Green Amla", group: "Amla", wholesale: 250, image: greenAmla },
+  { id: 76, name: "Small Usiri", group: "Amla", wholesale: 250, image: smallUsiri },
+  // Mulberry - same batch. Literal wording kept as sent by the owner.
+  { id: 77, name: "Mulberry green long...", group: "Mulberry", wholesale: 350, image: mulberryGreenLong },
+  { id: 78, name: "Mulberry black", group: "Mulberry", wholesale: 200, image: mulberryBlack },
+  // Miracle Fruit and Dragon fruit - same batch.
+  { id: 79, name: "Miracle Fruit", group: "Miracle Fruit", wholesale: 700, image: miracleFruit },
+  { id: 80, name: "Dragon fruit", group: "Dragon fruit", wholesale: 150, image: dragonFruit },
 ];

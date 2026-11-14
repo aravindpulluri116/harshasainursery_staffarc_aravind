@@ -43,6 +43,19 @@ import { ilachi } from "../assets/catalogue-images-43";
 import { allSpice } from "../assets/catalogue-images-44";
 import { peppar, biryaniLeaf } from "../assets/catalogue-images-45";
 import { basmathiLeaf } from "../assets/catalogue-images-46";
+import { rangapoorBathai } from "../assets/catalogue-images-47";
+import { sweetKamala } from "../assets/catalogue-images-48";
+import { orangePlant } from "../assets/catalogue-images-49";
+import { grapesPlant } from "../assets/catalogue-images-50";
+import { jabotia } from "../assets/catalogue-images-51";
+import { pkm1Munaga } from "../assets/catalogue-images-52";
+import { redladyCo15Papaya } from "../assets/catalogue-images-53";
+import { suryanamCherriSweet } from "../assets/catalogue-images-54";
+import { pinkotonAvacado } from "../assets/catalogue-images-55";
+import { avocadoGreenBulb } from "../assets/catalogue-images-56";
+import { redChekkarakeli } from "../assets/catalogue-images-57";
+import { amruthapaniBanana } from "../assets/catalogue-images-58";
+import { karpuramBanana } from "../assets/catalogue-images-59";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -175,4 +188,18 @@ export const plants = [
   { id: 108, name: "Ilachi", group: "Spices", wholesale: 250, image: ilachi },
   { id: 109, name: "All spice", group: "Spices", wholesale: 250, image: allSpice },
   { id: 110, name: "Basmathi leaf", group: "Spices", wholesale: 260, image: basmathiLeaf },
+  // Owner WhatsApp 2026-11-14 evening batch, approved "Add missing" 19:36 IST; names/prices literal as typed.
+  { id: 111, name: "Rangapoor bathai", group: "Bathai", wholesale: 250, image: rangapoorBathai },
+  { id: 112, name: "Sweet kamala", group: "Kamala", wholesale: 250, image: sweetKamala },
+  { id: 113, name: "Orange", group: "Orange", wholesale: 250, image: orangePlant },
+  { id: 114, name: "Grapes", group: "Grapes", wholesale: 150, image: grapesPlant },
+  { id: 115, name: "Jabotia", group: "Jabotia", wholesale: 800, image: jabotia },
+  { id: 116, name: "Pkm -1 munaga", group: "Munaga", wholesale: 25, image: pkm1Munaga },
+  { id: 117, name: "Redlady..and co -15 papaya", group: "Papaya", wholesale: 25, image: redladyCo15Papaya },
+  { id: 118, name: "Suryanam cherri sweet...", group: "Cherri", wholesale: 500, image: suryanamCherriSweet },
+  { id: 119, name: "Pinkoton avacado", group: "Avocado", wholesale: 750, image: pinkotonAvacado },
+  { id: 120, name: "Avacado green bulb", group: "Avocado", wholesale: 350, image: avocadoGreenBulb },
+  { id: 121, name: "Red Chekkarakeli", group: "Banana", wholesale: 150, image: redChekkarakeli },
+  { id: 122, name: "Amruthapani banana", group: "Banana", wholesale: 150, image: amruthapaniBanana },
+  { id: 123, name: "Karpuram banana", group: "Banana", wholesale: 150, image: karpuramBanana },
 ];

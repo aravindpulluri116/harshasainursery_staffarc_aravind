@@ -65,5 +65,6 @@ export const FILTERS = [
   { key: "Rose Apple", label: "Rose Apple" },
   { key: "Chintha", label: "Chintha" },
   { key: "Pineapple", label: "Pineapple" },
+  { key: "Spices", label: "Spices" },
 ];
 

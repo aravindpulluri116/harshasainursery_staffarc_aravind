@@ -37,6 +37,12 @@ import { roseApple } from "../assets/catalogue-images-37";
 import { sweetChintha } from "../assets/catalogue-images-38";
 import { redChintha } from "../assets/catalogue-images-39";
 import { pineApple } from "../assets/catalogue-images-40";
+import { dhalchina } from "../assets/catalogue-images-41";
+import { lavanga } from "../assets/catalogue-images-42";
+import { ilachi } from "../assets/catalogue-images-43";
+import { allSpice } from "../assets/catalogue-images-44";
+import { peppar, biryaniLeaf } from "../assets/catalogue-images-45";
+import { basmathiLeaf } from "../assets/catalogue-images-46";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -161,4 +167,12 @@ export const plants = [
   // Same batch, 19:12 IST pair.
   { id: 102, name: "Red chintha", group: "Chintha", wholesale: 450, image: redChintha },
   { id: 103, name: "Pine apple", group: "Pineapple", wholesale: 150, image: pineApple },
+  // Spice plants - owner WhatsApp 2026-11-14 19:19-19:20 IST batch: name, price and photo sent together per item.
+  { id: 104, name: "Peppar", group: "Spices", wholesale: 250, image: peppar },
+  { id: 105, name: "Dhalchina", group: "Spices", wholesale: 250, image: dhalchina },
+  { id: 106, name: "Lavanga", group: "Spices", wholesale: 250, image: lavanga },
+  { id: 107, name: "Biryani leaf", group: "Spices", wholesale: 250, image: biryaniLeaf },
+  { id: 108, name: "Ilachi", group: "Spices", wholesale: 250, image: ilachi },
+  { id: 109, name: "All spice", group: "Spices", wholesale: 250, image: allSpice },
+  { id: 110, name: "Basmathi leaf", group: "Spices", wholesale: 260, image: basmathiLeaf },
 ];

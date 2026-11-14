@@ -56,5 +56,14 @@ export const FILTERS = [
   { key: "Mulberry", label: "Mulberry" },
   { key: "Miracle Fruit", label: "Miracle Fruit" },
   { key: "Dragon fruit", label: "Dragon fruit" },
+  { key: "Velaga Pandu", label: "Velaga Pandu" },
+  { key: "Milk Fruit", label: "Milk Fruit" },
+  { key: "Longan", label: "Longan" },
+  { key: "Apple Ber", label: "Apple Ber" },
+  { key: "Karonda", label: "Karonda" },
+  { key: "Banana", label: "Banana" },
+  { key: "Rose Apple", label: "Rose Apple" },
+  { key: "Chintha", label: "Chintha" },
+  { key: "Pineapple", label: "Pineapple" },
 ];
 

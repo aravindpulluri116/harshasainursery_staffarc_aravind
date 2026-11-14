@@ -28,6 +28,15 @@ import { greenAmla, smallUsiri } from "../assets/catalogue-images-28";
 import { mulberryGreenLong, mulberryBlack } from "../assets/catalogue-images-29";
 import { miracleFruit } from "../assets/catalogue-images-30";
 import { dragonFruit } from "../assets/catalogue-images-31";
+import { velagaPanduSweet } from "../assets/catalogue-images-32";
+import { milkFruit, longanFruit } from "../assets/catalogue-images-33";
+import { kashmirRedAppleBer } from "../assets/catalogue-images-34";
+import { karondaOrVakkayyaCherri, chekkarakeliBanana } from "../assets/catalogue-images-35";
+import { missIndiaAppleBer } from "../assets/catalogue-images-36";
+import { roseApple } from "../assets/catalogue-images-37";
+import { sweetChintha } from "../assets/catalogue-images-38";
+import { redChintha } from "../assets/catalogue-images-39";
+import { pineApple } from "../assets/catalogue-images-40";
 
 // Real catalogue supplied by the nursery owner via WhatsApp on 2026-10-30.
 // Names and prices preserved as supplied. Prices are per-plant wholesale (INR).
@@ -137,4 +146,19 @@ export const plants = [
   // Miracle Fruit and Dragon fruit - same batch.
   { id: 79, name: "Miracle Fruit", group: "Miracle Fruit", wholesale: 700, image: miracleFruit },
   { id: 80, name: "Dragon fruit", group: "Dragon fruit", wholesale: 150, image: dragonFruit },
+  // Owner WhatsApp 2026-11-14 batch: name, price and photo sent together per item; "Upload them" 19:07 IST.
+  { id: 93, name: "Velaga pandu sweet", group: "Velaga Pandu", wholesale: 450, image: velagaPanduSweet },
+  { id: 94, name: "Milk fruit", group: "Milk Fruit", wholesale: 600, image: milkFruit },
+  { id: 95, name: "Longan fruit", group: "Longan", wholesale: 800, image: longanFruit },
+  { id: 96, name: "Kashmir red apple ber", group: "Apple Ber", wholesale: 250, image: kashmirRedAppleBer },
+  // Same batch, 19:09 IST pair.
+  { id: 97, name: "Karonda or vakkayya cherri", group: "Karonda", wholesale: 250, image: karondaOrVakkayyaCherri },
+  { id: 98, name: "Chekkarakeli Banana", group: "Banana", wholesale: 150, image: chekkarakeliBanana },
+  // Same batch, 19:10 IST trio.
+  { id: 99, name: "Miss india apple ber", group: "Apple Ber", wholesale: 250, image: missIndiaAppleBer },
+  { id: 100, name: "Rose apple", group: "Rose Apple", wholesale: 600, image: roseApple },
+  { id: 101, name: "Sweet chintha", group: "Chintha", wholesale: 450, image: sweetChintha },
+  // Same batch, 19:12 IST pair.
+  { id: 102, name: "Red chintha", group: "Chintha", wholesale: 450, image: redChintha },
+  { id: 103, name: "Pine apple", group: "Pineapple", wholesale: 150, image: pineApple },
 ];

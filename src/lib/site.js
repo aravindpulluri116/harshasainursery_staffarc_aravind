@@ -66,5 +66,13 @@ export const FILTERS = [
   { key: "Chintha", label: "Chintha" },
   { key: "Pineapple", label: "Pineapple" },
   { key: "Spices", label: "Spices" },
+  { key: "Bathai", label: "Bathai" },
+  { key: "Kamala", label: "Kamala" },
+  { key: "Orange", label: "Orange" },
+  { key: "Grapes", label: "Grapes" },
+  { key: "Jabotia", label: "Jabotia" },
+  { key: "Munaga", label: "Munaga" },
+  { key: "Papaya", label: "Papaya" },
+  { key: "Cherri", label: "Cherri" },
+  { key: "Avocado", label: "Avocado" },
 ];
-

@@ -1,3 +1,5 @@
+import { mirchiHybrid, cabbage, cauliflower } from "../assets/catalogue-images-64";
+import { brinjalAnyVariety } from "../assets/catalogue-images-66";
 import { japathriJajikaya, passionFruit, gacFruit, baguvaDhanimma, keraShankaraTD } from "../assets/catalogue-images-63";
 import { badbodasCherry, kunkuduKaya, vakkayyaKarondaPulupu, rambuton } from "../assets/catalogue-images-62";
 import { greenAppleBer, dates } from "../assets/catalogue-images-61";
@@ -221,4 +223,9 @@ export const plants = [
   { id: 134, name: "Gac fruit", group: "Gac fruit", wholesale: 400, image: gacFruit },
   { id: 135, name: "Baguva dhanimma", group: "Baguva dhanimma", wholesale: 250, image: baguvaDhanimma },
   { id: 136, name: "Kera shankara T×D..", group: "Coconut", wholesale: 600, image: keraShankaraTD },
+  // Owner WhatsApp 2026-11-16 18:30 IST: supplied names, prices and photos.
+  { id: 137, name: "Mirchi hybrid", group: "Mirchi", wholesale: 2, image: mirchiHybrid },
+  { id: 138, name: "Cabbage", group: "Cabbage", wholesale: 1.5, image: cabbage },
+  { id: 139, name: "Cauliflower", group: "Cauliflower", wholesale: 1.5, image: cauliflower },
+  { id: 140, name: "Brinjal any variety", group: "Brinjal", wholesale: 1, image: brinjalAnyVariety },
 ];

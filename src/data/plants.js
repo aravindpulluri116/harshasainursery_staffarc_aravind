@@ -1,3 +1,5 @@
+import { greenAppleBer, dates } from "../assets/catalogue-images-61";
+import { poka, eetha } from "../assets/catalogue-images-60";
 import { malaysianGreenDwarfCoconut } from "../assets/catalogue-images-1";
 import { gangaBondamDwarfCoconut } from "../assets/catalogue-images-2";
 import { coconutYellowFruit, custardAppleFruit } from "../assets/catalogue-images-3";
@@ -202,4 +204,8 @@ export const plants = [
   { id: 121, name: "Red Chekkarakeli", group: "Banana", wholesale: 150, image: redChekkarakeli },
   { id: 122, name: "Amruthapani banana", group: "Banana", wholesale: 150, image: amruthapaniBanana },
   { id: 123, name: "Karpuram banana", group: "Banana", wholesale: 150, image: karpuramBanana },
+  { id: 124, name: "Poka", group: "Poka", wholesale: 75, image: poka },
+  { id: 125, name: "Eetha", group: "Eetha", wholesale: 150, image: eetha, desc: "Size: 8×10." },
+  { id: 126, name: "Green apple ber", group: "Apple Ber", wholesale: 250, image: greenAppleBer },
+  { id: 127, name: "Dates", group: "Dates", wholesale: 250, image: dates },
 ];

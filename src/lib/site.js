@@ -88,4 +88,5 @@ export const FILTERS = [
   { key: "Cabbage", label: "Cabbage" },
   { key: "Cauliflower", label: "Cauliflower" },
   { key: "Brinjal", label: "Brinjal" },
+  { key: "Tomato", label: "Tomato" },
 ];

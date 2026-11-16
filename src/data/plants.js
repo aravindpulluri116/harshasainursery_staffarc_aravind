@@ -1,5 +1,7 @@
 import { mirchiHybrid, cabbage, cauliflower } from "../assets/catalogue-images-64";
 import { brinjalAnyVariety } from "../assets/catalogue-images-66";
+import { normalTamato, banthiYellowOrange } from "../assets/catalogue-images-67";
+import { snakePlant, jadePlant, hangingCreepers } from "../assets/catalogue-images-68";
 import { hybridTamato } from "../assets/catalogue-images-65";
 import { japathriJajikaya, passionFruit, gacFruit, baguvaDhanimma, keraShankaraTD } from "../assets/catalogue-images-63";
 import { badbodasCherry, kunkuduKaya, vakkayyaKarondaPulupu, rambuton } from "../assets/catalogue-images-62";
@@ -229,6 +231,13 @@ export const plants = [
   { id: 138, name: "Cabbage", group: "Cabbage", wholesale: 1.5, image: cabbage },
   { id: 139, name: "Cauliflower", group: "Cauliflower", wholesale: 1.5, image: cauliflower },
   { id: 140, name: "Brinjal any variety", group: "Brinjal", wholesale: 1, image: brinjalAnyVariety },
-  // Owner WhatsApp 2026-11-16 18:57 IST: confirmed "50 per piece" for Hybrid tamato.
-  { id: 141, name: "Hybrid tamato", group: "Tomato", wholesale: 50, image: hybridTamato },
+  // Owner WhatsApp 2026-11-16: first confirmed "50 per piece" (18:57 IST), then corrected it to 1.5 rs ("I think the prev tomato is 1.5 rs ig", confirmed "Yes" 19:05-19:06 IST).
+  { id: 141, name: "Hybrid tamato", group: "Tomato", wholesale: 1.5, image: hybridTamato },
+  // Owner WhatsApp 2026-11-16 19:04-19:05 IST batch: name, price and photo sent together per item. Names literal as typed.
+  // "Above all vegetable sapllings" covered Normal tamato and Banthi yellow orange; "Now indoor plants" covers the last three.
+  { id: 142, name: "Normal tamato", group: "Tomato", wholesale: 0.8, image: normalTamato },
+  { id: 143, name: "Banthi yellow orange", group: "Banthi", wholesale: 3.5, image: banthiYellowOrange },
+  { id: 144, name: "Snake plant", group: "Indoor Plants", wholesale: 250, image: snakePlant },
+  { id: 145, name: "Jade plant", group: "Indoor Plants", wholesale: 350, image: jadePlant },
+  { id: 146, name: "Hanging creepers", group: "Indoor Plants", wholesale: 500, image: hangingCreepers },
 ];

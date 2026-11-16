@@ -6,6 +6,12 @@ import { peaceLily } from "../assets/catalogue-images-69";
 import { redAglaonema } from "../assets/catalogue-images-70";
 import { aglaonemaPink, aglaonemaWhite } from "../assets/catalogue-images-71";
 import { zzPlant } from "../assets/catalogue-images-72";
+import { luckyBamboo, anthoriumRed } from "../assets/catalogue-images-73";
+import { draceanaDraco } from "../assets/catalogue-images-74";
+import { parlourPalm } from "../assets/catalogue-images-75";
+import { victoriaBirdNestFern } from "../assets/catalogue-images-76";
+import { philodendron } from "../assets/catalogue-images-77";
+import { moneyPlant } from "../assets/catalogue-images-78";
 import { hybridTamato } from "../assets/catalogue-images-65";
 import { japathriJajikaya, passionFruit, gacFruit, baguvaDhanimma, keraShankaraTD } from "../assets/catalogue-images-63";
 import { badbodasCherry, kunkuduKaya, vakkayyaKarondaPulupu, rambuton } from "../assets/catalogue-images-62";
@@ -250,4 +256,12 @@ export const plants = [
   { id: 149, name: "Aglaonema pink", group: "Indoor Plants", wholesale: 500, image: aglaonemaPink },
   { id: 150, name: "Zz plant", group: "Indoor Plants", wholesale: 450, image: zzPlant },
   { id: 151, name: "Aglaonema white", group: "Indoor Plants", wholesale: 500, image: aglaonemaWhite },
+  // Owner WhatsApp 2026-11-16 19:32-19:33 IST batch: name, price and photo sent together per item. Names literal as typed; continuing indoor batch.
+  { id: 152, name: "Lucky bamboo", group: "Indoor Plants", wholesale: 750, image: luckyBamboo },
+  { id: 153, name: "Draceana Draco", group: "Indoor Plants", wholesale: 5000, image: draceanaDraco },
+  { id: 154, name: "Parlour palm", group: "Indoor Plants", wholesale: 600, image: parlourPalm },
+  { id: 155, name: "Anthorium red", group: "Indoor Plants", wholesale: 600, image: anthoriumRed },
+  { id: 156, name: "Victoria bird nest fern", group: "Indoor Plants", wholesale: 600, image: victoriaBirdNestFern },
+  { id: 157, name: "Philodendron", group: "Indoor Plants", wholesale: 800, image: philodendron },
+  { id: 158, name: "Money plant", group: "Indoor Plants", wholesale: 300, image: moneyPlant },
 ];

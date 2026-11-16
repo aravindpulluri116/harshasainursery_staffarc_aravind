@@ -1,3 +1,4 @@
+import { japathriJajikaya, passionFruit, gacFruit, baguvaDhanimma, keraShankaraTD } from "../assets/catalogue-images-63";
 import { badbodasCherry, kunkuduKaya, vakkayyaKarondaPulupu, rambuton } from "../assets/catalogue-images-62";
 import { greenAppleBer, dates } from "../assets/catalogue-images-61";
 import { poka, eetha } from "../assets/catalogue-images-60";
@@ -214,4 +215,10 @@ export const plants = [
   { id: 129, name: "Kunkudu kaya", group: "Kunkudu Kaya", wholesale: 250, image: kunkuduKaya },
   { id: 130, name: "Vakkayya... Karonda... Pulupu", group: "Karonda", wholesale: 100, image: vakkayyaKarondaPulupu },
   { id: 131, name: "Rambuton", group: "Rambuton", wholesale: 750, image: rambuton },
+  // Owner WhatsApp 2026-11-16 18:06 IST: supplied names, prices and photos.
+  { id: 132, name: "Japathri.. Jajikaya", group: "Spices", wholesale: 250, image: japathriJajikaya },
+  { id: 133, name: "Passion fruit", group: "Passion fruit", wholesale: 600, image: passionFruit },
+  { id: 134, name: "Gac fruit", group: "Gac fruit", wholesale: 400, image: gacFruit },
+  { id: 135, name: "Baguva dhanimma", group: "Baguva dhanimma", wholesale: 250, image: baguvaDhanimma },
+  { id: 136, name: "Kera shankara T×D..", group: "Coconut", wholesale: 600, image: keraShankaraTD },
 ];

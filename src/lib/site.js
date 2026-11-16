@@ -75,4 +75,7 @@ export const FILTERS = [
   { key: "Papaya", label: "Papaya" },
   { key: "Cherri", label: "Cherri" },
   { key: "Avocado", label: "Avocado" },
+  { key: "Poka", label: "Poka" },
+  { key: "Eetha", label: "Eetha" },
+  { key: "Dates", label: "Dates" },
 ];

@@ -78,4 +78,7 @@ export const FILTERS = [
   { key: "Poka", label: "Poka" },
   { key: "Eetha", label: "Eetha" },
   { key: "Dates", label: "Dates" },
+  { key: "Badbodas Cherry", label: "Badbodas Cherry" },
+  { key: "Kunkudu Kaya", label: "Kunkudu Kaya" },
+  { key: "Rambuton", label: "Rambuton" },
 ];

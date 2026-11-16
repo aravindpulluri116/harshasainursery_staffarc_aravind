@@ -2,6 +2,10 @@ import { mirchiHybrid, cabbage, cauliflower } from "../assets/catalogue-images-6
 import { brinjalAnyVariety } from "../assets/catalogue-images-66";
 import { normalTamato, banthiYellowOrange } from "../assets/catalogue-images-67";
 import { snakePlant, jadePlant, hangingCreepers } from "../assets/catalogue-images-68";
+import { peaceLily } from "../assets/catalogue-images-69";
+import { redAglaonema } from "../assets/catalogue-images-70";
+import { aglaonemaPink, aglaonemaWhite } from "../assets/catalogue-images-71";
+import { zzPlant } from "../assets/catalogue-images-72";
 import { hybridTamato } from "../assets/catalogue-images-65";
 import { japathriJajikaya, passionFruit, gacFruit, baguvaDhanimma, keraShankaraTD } from "../assets/catalogue-images-63";
 import { badbodasCherry, kunkuduKaya, vakkayyaKarondaPulupu, rambuton } from "../assets/catalogue-images-62";
@@ -240,4 +244,10 @@ export const plants = [
   { id: 144, name: "Snake plant", group: "Indoor Plants", wholesale: 250, image: snakePlant },
   { id: 145, name: "Jade plant", group: "Indoor Plants", wholesale: 350, image: jadePlant },
   { id: 146, name: "Hanging creepers", group: "Indoor Plants", wholesale: 500, image: hangingCreepers },
+  // Owner WhatsApp 2026-11-16 19:18-19:19 IST batch: name, price and photo sent together per item. Names literal as typed; all five under "Now indoor plants".
+  { id: 147, name: "Red Aglaonema", group: "Indoor Plants", wholesale: 500, image: redAglaonema },
+  { id: 148, name: "Peace lily", group: "Indoor Plants", wholesale: 700, image: peaceLily },
+  { id: 149, name: "Aglaonema pink", group: "Indoor Plants", wholesale: 500, image: aglaonemaPink },
+  { id: 150, name: "Zz plant", group: "Indoor Plants", wholesale: 450, image: zzPlant },
+  { id: 151, name: "Aglaonema white", group: "Indoor Plants", wholesale: 500, image: aglaonemaWhite },
 ];

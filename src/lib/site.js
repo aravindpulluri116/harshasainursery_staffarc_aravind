@@ -84,4 +84,8 @@ export const FILTERS = [
   { key: "Passion fruit", label: "Passion fruit" },
   { key: "Gac fruit", label: "Gac fruit" },
   { key: "Baguva dhanimma", label: "Baguva dhanimma" },
+  { key: "Mirchi", label: "Mirchi" },
+  { key: "Cabbage", label: "Cabbage" },
+  { key: "Cauliflower", label: "Cauliflower" },
+  { key: "Brinjal", label: "Brinjal" },
 ];

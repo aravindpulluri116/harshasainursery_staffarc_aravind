@@ -1,3 +1,7 @@
+import { brokenHeartMonstera, monsteraDeliciosa } from "../assets/catalogue-images-79";
+import { fernPlant } from "../assets/catalogue-images-80";
+import { spiderPlant, rubberPlant, succulentPlants } from "../assets/catalogue-images-81";
+import { adenium } from "../assets/catalogue-images-82";
 import { mirchiHybrid, cabbage, cauliflower } from "../assets/catalogue-images-64";
 import { brinjalAnyVariety } from "../assets/catalogue-images-66";
 import { normalTamato, banthiYellowOrange } from "../assets/catalogue-images-67";
@@ -264,4 +268,12 @@ export const plants = [
   { id: 156, name: "Victoria bird nest fern", group: "Indoor Plants", wholesale: 600, image: victoriaBirdNestFern },
   { id: 157, name: "Philodendron", group: "Indoor Plants", wholesale: 800, image: philodendron },
   { id: 158, name: "Money plant", group: "Indoor Plants", wholesale: 300, image: moneyPlant },
+  // Supplied indoor plant batch.
+  { id: 159, name: "Broken heart monstera", group: "Indoor Plants", wholesale: 600, image: brokenHeartMonstera },
+  { id: 160, name: "Monstera deliciosa", group: "Indoor Plants", wholesale: 1000, image: monsteraDeliciosa },
+  { id: 161, name: "Fern plant", group: "Indoor Plants", wholesale: 500, image: fernPlant },
+  { id: 162, name: "Spider plant", group: "Indoor Plants", wholesale: 300, image: spiderPlant },
+  { id: 163, name: "Rubber plant", group: "Indoor Plants", wholesale: 500, image: rubberPlant },
+  { id: 164, name: "Succulent plants", group: "Indoor Plants", wholesale: 500, image: succulentPlants },
+  { id: 165, name: "Adenium", group: "Indoor Plants", wholesale: 500, image: adenium },
 ];

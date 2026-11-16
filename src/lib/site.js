@@ -81,4 +81,7 @@ export const FILTERS = [
   { key: "Badbodas Cherry", label: "Badbodas Cherry" },
   { key: "Kunkudu Kaya", label: "Kunkudu Kaya" },
   { key: "Rambuton", label: "Rambuton" },
+  { key: "Passion fruit", label: "Passion fruit" },
+  { key: "Gac fruit", label: "Gac fruit" },
+  { key: "Baguva dhanimma", label: "Baguva dhanimma" },
 ];

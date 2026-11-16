@@ -89,4 +89,6 @@ export const FILTERS = [
   { key: "Cauliflower", label: "Cauliflower" },
   { key: "Brinjal", label: "Brinjal" },
   { key: "Tomato", label: "Tomato" },
+  { key: "Banthi", label: "Banthi" },
+  { key: "Indoor Plants", label: "Indoor Plants" },
 ];

@@ -1,3 +1,4 @@
+import { badbodasCherry, kunkuduKaya, vakkayyaKarondaPulupu, rambuton } from "../assets/catalogue-images-62";
 import { greenAppleBer, dates } from "../assets/catalogue-images-61";
 import { poka, eetha } from "../assets/catalogue-images-60";
 import { malaysianGreenDwarfCoconut } from "../assets/catalogue-images-1";
@@ -208,4 +209,9 @@ export const plants = [
   { id: 125, name: "Eetha", group: "Eetha", wholesale: 150, image: eetha, desc: "Size: 8×10." },
   { id: 126, name: "Green apple ber", group: "Apple Ber", wholesale: 250, image: greenAppleBer },
   { id: 127, name: "Dates", group: "Dates", wholesale: 250, image: dates },
+  // Owner WhatsApp 2026-11-16 17:58-17:59 IST batch: name, price and photo sent together per item. Names literal as typed.
+  { id: 128, name: "Badbodas cherry", group: "Badbodas Cherry", wholesale: 350, image: badbodasCherry },
+  { id: 129, name: "Kunkudu kaya", group: "Kunkudu Kaya", wholesale: 250, image: kunkuduKaya },
+  { id: 130, name: "Vakkayya... Karonda... Pulupu", group: "Karonda", wholesale: 100, image: vakkayyaKarondaPulupu },
+  { id: 131, name: "Rambuton", group: "Rambuton", wholesale: 750, image: rambuton },
 ];

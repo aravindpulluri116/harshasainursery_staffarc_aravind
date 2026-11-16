@@ -1,5 +1,6 @@
 import { mirchiHybrid, cabbage, cauliflower } from "../assets/catalogue-images-64";
 import { brinjalAnyVariety } from "../assets/catalogue-images-66";
+import { hybridTamato } from "../assets/catalogue-images-65";
 import { japathriJajikaya, passionFruit, gacFruit, baguvaDhanimma, keraShankaraTD } from "../assets/catalogue-images-63";
 import { badbodasCherry, kunkuduKaya, vakkayyaKarondaPulupu, rambuton } from "../assets/catalogue-images-62";
 import { greenAppleBer, dates } from "../assets/catalogue-images-61";
@@ -228,4 +229,6 @@ export const plants = [
   { id: 138, name: "Cabbage", group: "Cabbage", wholesale: 1.5, image: cabbage },
   { id: 139, name: "Cauliflower", group: "Cauliflower", wholesale: 1.5, image: cauliflower },
   { id: 140, name: "Brinjal any variety", group: "Brinjal", wholesale: 1, image: brinjalAnyVariety },
+  // Owner WhatsApp 2026-11-16 18:57 IST: confirmed "50 per piece" for Hybrid tamato.
+  { id: 141, name: "Hybrid tamato", group: "Tomato", wholesale: 50, image: hybridTamato },
 ];

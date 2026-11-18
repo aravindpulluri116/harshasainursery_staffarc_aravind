@@ -7,7 +7,18 @@ import { motion } from "motion/react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { SectionHeader } from "@/components/section-header";
 import { plants } from "@/data/plants";
-const items = plants.filter((p) => p.image).slice(0, 12);
+import { chandaShankara, coconutBunch } from "@/assets/gallery-coconut-1";
+import { palmOne, palmTwo } from "@/assets/gallery-coconut-2";
+import { maleshianGreen } from "@/assets/gallery-coconut-3";
+// Gallery-only photos supplied on 16 November 2026. Not catalogue products.
+const galleryPhotos = [
+  { id: "gallery-chanda-shankara", name: "Chanda shankara", image: chandaShankara },
+  { id: "gallery-coconut-palm-1", name: "", image: palmOne },
+  { id: "gallery-coconut-bunch", name: "", image: coconutBunch },
+  { id: "gallery-coconut-palm-2", name: "", image: palmTwo },
+  { id: "gallery-maleshian-green", name: "Maleshian green", image: maleshianGreen },
+];
+const items = [...galleryPhotos, ...plants.filter((p) => p.image).slice(0, 12)];
 
 export function Gallery() {
   const [index, setIndex] = useState(null);
@@ -31,7 +42,7 @@ export function Gallery() {
               key={p.id}
               type="button"
               onClick={() => setIndex(i)}
-              aria-label={`View ${p.name}`}
+              aria-label={`View ${p.name || "coconut photo"}`}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -39,7 +50,7 @@ export function Gallery() {
               transition={{ type: "spring", stiffness: 140, damping: 16, delay: (i % 4) * 0.06 }}
               className="relative aspect-square overflow-hidden rounded-2xl shadow-soft"
             >
-              <Image src={p.image} alt={p.name} fill loading="lazy" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" className="object-cover" />
+              <Image src={p.image} alt={p.name || "Coconut palm photo"} fill loading="lazy" sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" className="object-cover" />
             </motion.button>
           ))}
         </div>
@@ -60,10 +71,10 @@ export function Gallery() {
             }}
           >
             <div className="relative aspect-square max-h-[80dvh] w-full">
-              <Image key={item.id} src={item.image} alt={item.name} fill sizes="(min-width: 768px) 768px, 100vw" className="object-contain" />
+              <Image key={item.id} src={item.image} alt={item.name || "Coconut palm photo"} fill sizes="(min-width: 768px) 768px, 100vw" className="object-contain" />
             </div>
             <div className="flex items-center justify-between gap-3 bg-black px-4 py-3 text-white">
-              <DialogTitle className="text-base font-bold">{item.name}</DialogTitle>
+              <DialogTitle className={item.name ? "text-base font-bold" : "sr-only"}>{item.name || "Coconut photo"}</DialogTitle>
               <DialogDescription className="text-sm text-white/70">{index + 1} / {items.length}</DialogDescription>
             </div>
             <button onClick={() => step(-1)} aria-label="Previous image" className="absolute top-1/2 left-3 grid size-10 -translate-y-1/2 place-items-center rounded-full bg-white/90 hover:bg-white">

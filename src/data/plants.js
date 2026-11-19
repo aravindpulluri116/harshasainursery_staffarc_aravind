@@ -1,3 +1,4 @@
+import { coconutGreenFruit } from "../assets/catalogue-images-3";
 import { brokenHeartMonstera, monsteraDeliciosa } from "../assets/catalogue-images-79";
 import { fernPlant } from "../assets/catalogue-images-80";
 import { spiderPlant, rubberPlant, succulentPlants } from "../assets/catalogue-images-81";
@@ -92,7 +93,7 @@ export const plants = [
   { id: 4, name: "Malaysian Orange Dwarf Coconut", group: "Coconut", wholesale: 450, image: malaysianOrangeDwarfCoconut },
   { id: 5, name: "Chanda Shankara Hybrid Coconut", group: "Coconut", wholesale: 550, image: chandaShankaraHybridCoconut },
   { id: 6, name: "Chowgard Orange Dwarf Coconut", group: "Coconut", wholesale: 450, image: chowgardOrangeCoconut },
-  { id: 7, name: "Chowgard Green Dwarf Coconut", group: "Coconut", wholesale: 450, image: chowgardGreenCoconut },
+  { id: 7, name: "Chowgard Green Dwarf Coconut", group: "Coconut", wholesale: 450, image: coconutGreenFruit, representative: true },
   { id: 8, name: "Chowgard Yellow Dwarf Coconut", group: "Coconut", wholesale: 450, image: chowgardYellowCoconut },
   // Owner WhatsApp 2026-11-12 15:18 IST: name, price and photo sent together for this item.
   { id: 64, name: "West coastal tall coconut", group: "Coconut", wholesale: 200, image: westCoastalTallCoconut },

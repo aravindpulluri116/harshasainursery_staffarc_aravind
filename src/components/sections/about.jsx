@@ -25,7 +25,7 @@ export function About() {
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 md:px-8 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
         <Reveal from="up" className="relative">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] md:aspect-[4/3] lg:aspect-[4/5]">
-            <Image src="/assets/about.webp" alt="Harsha Sai Nursery plants" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
+            <Image src="/assets/about-coconut-farm.webp" alt="Coconut nursery plants and palms" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
           </div>
         </Reveal>
 

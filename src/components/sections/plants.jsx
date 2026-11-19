@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback } from "react";
+import { useMemo, useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -37,6 +37,25 @@ export function Plants() {
   const router = useRouter();
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
+  const filterTabs = useRef(null);
+
+  useEffect(() => {
+    const applyCategory = () => {
+      const category = new URLSearchParams(window.location.search).get("category");
+      setFilter(FILTERS.some((item) => item.key === category) ? category : "all");
+    };
+    applyCategory();
+    window.addEventListener("popstate", applyCategory);
+    return () => window.removeEventListener("popstate", applyCategory);
+  }, []);
+
+  useEffect(() => {
+    const tabs = filterTabs.current;
+    const selected = tabs?.querySelector('[aria-selected="true"]');
+    if (tabs && selected) {
+      tabs.scrollLeft += selected.getBoundingClientRect().left - tabs.getBoundingClientRect().left - 16;
+    }
+  }, [filter]);
 
   const addToCart = useCallback((p) => {
     add({ id: p.id, name: p.name, image: p.image, type: p.group, wholesale: p.wholesale ?? null });
@@ -70,7 +89,7 @@ export function Plants() {
 
       <div className="mx-auto max-w-7xl px-4 pb-14 md:px-8 md:pb-20">
         <div className="-mx-4 mb-5 flex flex-col gap-3 border-b border-ink/10 bg-beige-50/95 px-4 py-3 backdrop-blur md:-mx-8 md:mb-8 md:flex-row md:items-center md:justify-between md:px-8">
-          <div role="tablist" aria-label="Filter plants" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0">
+          <div ref={filterTabs} role="tablist" aria-label="Filter plants" className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 md:mx-0 md:flex-wrap md:px-0">
             {FILTERS.map((f) => (
               <button
                 key={f.key}

@@ -11,6 +11,8 @@ import { plants } from "@/data/plants";
 import { TAGS } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+const MotionLink = motion.create(Link);
+
 const TAG_STYLE = {
   imported: "bg-white text-ink",
   exotic: "bg-lime text-green-950",
@@ -48,10 +50,9 @@ export function FeaturedPlants() {
       <div className="mx-auto max-w-7xl px-4 pb-14 md:px-8 md:pb-20">
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">
           {featured.map((p) => (
-            <motion.button
+            <MotionLink
               key={p.id}
-              type="button"
-              onClick={() => router.push(`/plants/${p.id}`)}
+              href={`/plants/${p.id}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -77,7 +78,7 @@ export function FeaturedPlants() {
                   {p.wholesale && <p className="text-sm font-bold text-lime">₹{p.wholesale}/-</p>}
                 </div>
               </div>
-            </motion.button>
+            </MotionLink>
           ))}
         </div>
 

@@ -18,6 +18,8 @@ import { useCart } from "@/lib/cart";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
+const MotionLink = motion.create(Link);
+
 const TAG_STYLE = {
   imported: "bg-white text-ink",
   exotic: "bg-lime text-green-950",
@@ -80,9 +82,9 @@ export function Plants() {
           <Sprout className="size-4" /> Catalogue
         </span>
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-          <h2 className="text-lg">
+          <h1 className="text-lg">
             <SplitText text="Our Plant Collections" />
-          </h2>
+          </h1>
           <p className="max-w-sm text-base text-ink/65">{"Real plants, real wholesale prices"}</p>
         </div>
       </div>
@@ -132,10 +134,9 @@ export function Plants() {
         ) : (
           <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 lg:grid-cols-4 xl:grid-cols-5">
             {list.map((p, i) => (
-              <motion.button
+              <MotionLink
                 key={p.id}
-                type="button"
-                onClick={() => router.push(`/plants/${p.id}`)}
+                href={`/plants/${p.id}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
@@ -157,7 +158,7 @@ export function Plants() {
                     {p.wholesale && <p className="text-sm font-bold text-lime">₹{p.wholesale}/-</p>}
                   </div>
                 </div>
-              </motion.button>
+              </MotionLink>
             ))}
           </div>
         )}
@@ -165,4 +166,4 @@ export function Plants() {
 
     </section>
   );
-}
+                }

@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+import { pageMetadata, plantDescription, SITE_URL } from "@/lib/seo";
 import { plants } from "@/data/plants";
 import { PlantDetail } from "@/components/plant-detail";
 
@@ -10,13 +12,21 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { id } = await params;
   const plant = plants.find((p) => String(p.id) === id);
-  return {
-    title: plant ? `${plant.name} — Harsha Sai Nursery` : "Plant — Harsha Sai Nursery",
-  };
+  if (!plant) notFound();
+  return pageMetadata({ title: `${plant.name} | Harsha Sai Nursery`, description: plantDescription(plant), path: `/plants/${plant.id}` });
 }
 
 export default async function PlantPage({ params }) {
   const { id } = await params;
   const plant = plants.find((p) => String(p.id) === id) ?? null;
-  return <PlantDetail plant={plant} />;
+  if (!plant) notFound();
+  const breadcrumb = {
+    "@context": "https://schema.org", "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Plants", item: `${SITE_URL}/plants` },
+      { "@type": "ListItem", position: 3, name: plant.name, item: `${SITE_URL}/plants/${plant.id}` },
+    ],
+  };
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb).replace(/</g, "\\u003c") }} /><PlantDetail plant={plant} /></>;
 }

@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import { licenceCertificate } from "@/assets/catalogue-images-8";
 import Link from "next/link";
 import { ArrowLeft, BadgeCheck } from "lucide-react";
@@ -6,10 +7,9 @@ import { Footer } from "@/components/sections/footer";
 import { Button } from "@/components/ui/button";
 import { waLink } from "@/lib/site";
 
-export const metadata = {
-  title: "Certifications | Harsha Sai Nursery",
-  description: "Horticulture nursery licence held by Harsha Sai Nursery, issued under the Telangana Registration of Horticulture Nurseries (Regulation) Act, 2010.",
-};
+
+
+export const metadata = pageMetadata({"title": "Nursery Licence | Harsha Sai Nursery", "path": "/certifications", "description": "View the Telangana horticulture nursery licence displayed by Harsha Sai Nursery in Medak, Telangana."});
 
 export default function CertificationsPage() {
   return (

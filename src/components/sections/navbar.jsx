@@ -216,8 +216,8 @@ export function Navbar() {
       <Button asChild variant="outline">
         <a href={`tel:${PHONE}`}><TelephoneIcon size={16} /> Call</a>
       </Button>
-      <Button asChild variant="whatsapp">
-        <a href={waLink()} target="_blank" rel="noreferrer"><WhatsappIcon size={16} /> WhatsApp</a>
+      <Button asChild>
+        <Link href="/checkout"><ShoppingCartIcon size={16} /> Checkout</Link>
       </Button>
     </div>
 
